@@ -1,26 +1,15 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets).
-
 # Harmony Mix
- > Authors:
- > [Jordan Ayvazian](https://github.com/jorbo)
- > [Ananya Sood](https://github.com/ananyasood2)
- > [Mani Ansari](https://github.com/maniansari)
- > [Ridhima Inukurti](https://github.com/ridhimainukurti)
-
- > ## Expectations
- > * The backend of your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
- > * **Each member of the group must actively participate in the Github Project board, writing unit tests, and reviewing commited code.**
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
+Authors:  
+[Jordan Ayvazian](https://github.com/jorbo)
+[Ananya Sood](https://github.com/ananyasood2)
+[Mani Ansari](https://github.com/maniansari)
+[Ridhima Inukurti](https://github.com/ridhimainukurti)  
 
 ## Project Description
- > * This idea is interesting to us because we all like music and wanted to create a console where we create a playlist and also get recommended songs based on the genres/music that we are interested in.
- > * The language that we are planning on using is c++ and the IDE we are using is vscode.
- > * The main inputs for our project will be the song name, playlist name, genre, username and password, and search (in the playlist). 
- > * Some features we are planning to implement are creating a playlist, adding music to the playlist, searching for songs, recommendations based on genre.
+ * This idea is interesting to us because we all like music and wanted to create a console where we create a playlist and also get recommended songs based on the genres/music that we are interested in.
+ * The language that we are planning on using is c++ and the IDE we are using is vscode.
+ * The main inputs for our project will be the song name, playlist name, genre, username and password, and search (in the playlist). 
+ * Some features we are planning to implement are creating a playlist, adding music to the playlist, searching for songs, recommendations based on genre.
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
