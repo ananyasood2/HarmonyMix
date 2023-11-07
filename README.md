@@ -8,7 +8,7 @@ Authors:
 ## Project Description
  * This idea is interesting to us because we all like music and wanted to create a console where we create a playlist and also get recommended songs based on the genres/music that we are interested in.
  * The language that we are planning on using is c++ and the IDE we are using is vscode.
- * The main inputs for our project will be the song name, playlist name, genre, username and password, and search (in the playlist) and in terms for our output, the user would be able to have a playlist that they can modify/edit to change their personal collection of songs. 
+ * The main inputs for our project will be the song name, playlist name, genre, username and password, and search (in the playlist) and in terms for our output, the user would be able to have a playlist that they can modify/edit to change their personal collection of songs. As well as display a list of songs in the users library and which songs are in which playlist.
  * Some features we are planning to implement are creating a playlist, adding music to the playlist, searching for songs, recommendations based on genre.
 
  > ## Phase II
