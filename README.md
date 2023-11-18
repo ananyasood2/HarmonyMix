@@ -18,7 +18,7 @@ Authors:
 ### Navigation Diagram
 ![Navigation diagram ](Navigation_Diagram.png)
 ### Screen Layouts
-![screen layouts](20231103_155215.jpg)
+![screen layouts](IMG_9551.heic)
 
 ## Class Diagram
 ![diagram of our classes needed](uml_class_diagram.png)
