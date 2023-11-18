@@ -3,3 +3,6 @@ cmake_install.cmake
 Makefile
 harmonymix
 CMakeCache.txt
+*.a
+runAllTests
+build/
