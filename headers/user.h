@@ -12,7 +12,7 @@ private:
     Library library;
     std::vector<Playlist> playlists;
     std::string username;
-    std::string hashedPassword;
+    std::string hashedPassword;    
 public:
     User() = default;
     User(std::string username, std::string password);

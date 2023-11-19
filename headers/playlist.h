@@ -1,9 +1,8 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
-#include "song.h"
-#include "db.h"
 #include <string>
 #include <vector>
+#include "song.h"
 
 using namespace std;
 

@@ -1,7 +1,7 @@
-#include "db.h"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include "db.h"
 
 namespace fs = std::filesystem;
 Db::Db()
@@ -26,10 +26,6 @@ Db::Db()
     usersdb.close();
 }
 
-void Db::add_song_to_library(User *user)
-{
-
-}
 
 bool Db::user_exists(std::string username){
     return false;

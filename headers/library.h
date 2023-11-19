@@ -4,7 +4,6 @@
 #include "db.h"
 #include <string>
 #include <vector>
-
 using namespace std;
 
 class Library {
@@ -15,6 +14,7 @@ class Library {
         Song searchBySongName(string songName);
         Song searchByArtistName(string artistName); 
         Song searchByGenre(string genreName);
+        bool addSong(Song *song, Db *db);
 };
 
 #endif
