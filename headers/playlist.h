@@ -12,6 +12,8 @@ private:
     string playlistName;
 public:
     Playlist() = default;
+    void addSong(Song songName);
+    void deleteSong(Song songName); 
 };
 
 #endif
