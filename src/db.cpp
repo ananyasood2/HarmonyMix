@@ -7,7 +7,7 @@
 namespace fs = std::filesystem;
 Db::Db()
 {
-        if(fs::exists(fs::current_path().append("users/usersdb.json"))){
+    if(fs::exists(fs::current_path().append("users/usersdb.json"))){
         std::cout << "usersdb exists" << std::endl;
     }
     else {
