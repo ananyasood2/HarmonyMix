@@ -1,5 +1,9 @@
+#ifndef LIBRARY_H
+#define LIBRARY_H
 #include "song.h"
 #include "db.h"
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -12,3 +16,5 @@ class Library {
         Song searchByArtistName(string artistName); 
         Song searchByGenre(string genreName);
 };
+
+#endif

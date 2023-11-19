@@ -1,3 +1,6 @@
+#ifndef USER_H
+#define USER_H
+
 #include "library.h"
 #include "playlist.h"
 
@@ -17,3 +20,5 @@ public:
     bool logout();
 
 };
+
+#endif
