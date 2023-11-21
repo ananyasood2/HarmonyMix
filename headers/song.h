@@ -17,6 +17,7 @@ public:
     string getName();
     string getArtistName();
     string getGenre();
+    void displaySong(const vector<Song> &songs);
 };
 
 #endif
