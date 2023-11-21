@@ -1,8 +1,11 @@
+#ifndef SONG_H
+#define SONG_H
+
 #include "db.h"
 #include "library.h"
 #include <string>
 
-using namespace std; 
+using namespace std;
 
 class Song {
 private:
@@ -15,3 +18,5 @@ public:
     string getArtistName();
     string getGenre();
 };
+
+#endif
