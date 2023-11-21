@@ -1,3 +1,5 @@
+#ifndef USERINTERFACE_H
+#define USERINTERFACE_H
 #include "library.h"
 #include "playlist.h"
 #include "user.h"
@@ -13,6 +15,11 @@ private:
     
 public:
     UI() = default;
-    void display();
+    void displayLogin();
+    void displayMainMenu();
+    void displayLibraryMenu();
+    void displayPlaylistMenu();
 
 };
+#endif
+
