@@ -6,3 +6,7 @@ CMakeCache.txt
 *.a
 runAllTests
 build/
+mainMenuUi.cpp
+playlistUI.cpp
+userInterface_test.cpp
+.vscode
