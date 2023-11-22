@@ -8,6 +8,7 @@ ADD_SUBDIRECTORY(googletest)
 ADD_EXECUTABLE(runAllTests
     user_test.cpp
     ../src/user.cpp
+    userInterface_test.cpp
 )
 
 TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)

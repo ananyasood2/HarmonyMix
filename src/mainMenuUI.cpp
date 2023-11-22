@@ -7,11 +7,16 @@ using namespace std;
 
 void UI::displayMainMenu(){
 int menuChoice=0;
-User x;
 cout<<"1)Library"<<endl;
 cout<<"2)Playlist"<<endl;
 cout<<"3)logout"<<endl;
 cin>>menuChoice;
+while (menuChoice<1 || menuChoice>3)
+{
+    cout<<"Invalid input, try again: ";
+    cin>>menuChoice;
+}
+
 if(menuChoice==1){
     displayPlaylistMenu();
 }
