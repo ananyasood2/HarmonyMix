@@ -6,14 +6,14 @@
 
 using namespace std;
 
-class Playlist {
+class Playlist : public Song {
 private:
-    vector<Song> songs;
+    vector<Song> playlist;
     string playlistName;
 public:
-    Playlist() = default;
-    void addSong(Song songName);
-    void deleteSong(Song songName); 
+    Playlist();
+    void addSong(const Song& song);
+    void deleteSong(const Song& song); 
 };
 
 #endif

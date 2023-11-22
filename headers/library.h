@@ -14,7 +14,7 @@ class Library {
         Song searchBySongName(string songName);
         Song searchByArtistName(string artistName); 
         Song searchByGenre(string genreName);
-        bool addSong(Song *song, Db *db);
+        bool addSong(Song *song);
 };
 
 #endif
