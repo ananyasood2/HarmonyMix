@@ -1,3 +1,6 @@
+#ifndef USER_H
+#define USER_H
+
 #include "library.h"
 #include "playlist.h"
 
@@ -9,7 +12,7 @@ private:
     Library library;
     std::vector<Playlist> playlists;
     std::string username;
-    std::string hashedPassword;
+    std::string hashedPassword;    
 public:
     User() = default;
     User(std::string username, std::string password);
@@ -17,3 +20,5 @@ public:
     bool logout();
 
 };
+
+#endif

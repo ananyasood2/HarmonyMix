@@ -1,8 +1,19 @@
-#include "song.h"
+#ifndef PLAYLIST_H
+#define PLAYLIST_H
+#include <string>
 #include <vector>
+#include "song.h"
+
+using namespace std;
 
 class Playlist {
-    std::vector<Song> songs;
+private:
+    vector<Song> songs;
+    string playlistName;
 public:
     Playlist() = default;
+    void addSong(Song songName);
+    void deleteSong(Song songName); 
 };
+
+#endif
