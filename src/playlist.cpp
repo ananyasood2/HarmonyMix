@@ -19,9 +19,3 @@ void PlayList::deleteSong(Song &song) {
     }
     
 }
-
-for (Song &song : playlist) {
-        if (song.getName() == songName) {
-            songs.erase()
-        }
-    }

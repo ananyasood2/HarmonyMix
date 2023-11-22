@@ -1,7 +1,7 @@
 #include "library.h"
 
 //checking to see if there is a song that exists according to genre within the playlist vector 
-Song Library::searchByGenre(string genreName) {
+void Library::searchByGenre(string genreName) {
 
     for (Song &song : songs) {
         if (song.getGenre() == genreName) {
@@ -11,13 +11,24 @@ Song Library::searchByGenre(string genreName) {
     }
 }
 
+//addings a new song into the library
+void Library::addToLibrary(string songName, string artistName, string genreName) {
+    Song newSong(songName, artistName, genreName); 
+
+    //checking to make sure that a duplicate song wasn't added
+    if (newSong.duplicateSong(newSong) == false) {
+        songs.push_back(newSong); 
+    }
+    
+}
+
 //checking to see if there is a duplicate song in the library 
-bool Library::addSong(Song *song) {
-    bool decision = true;
+bool Library::duplicateSong(Song *song) {
+    bool decision = false;
 
     for (Song &songDuplicate : songs) {
         if (songDuplicate.getName() == song.getName() && songDuplicate.getArtistName() == song.getArtistName()) {
-            return false;
+            return true;
         }
     }
 }
