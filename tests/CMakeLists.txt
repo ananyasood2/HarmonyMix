@@ -8,12 +8,13 @@ ADD_SUBDIRECTORY(googletest)
 ADD_EXECUTABLE(runAllTests
     user_test.cpp
     ../src/user.cpp
+    userInterface_test.cpp
     playlist_test.cpp 
     ../src/playlist.cpp
     song_test.cpp
     ../src/song.cpp
     library_test.cpp 
-    ../src/library.cpp 
+    ../src/library.cpp  
 )
 
 TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
