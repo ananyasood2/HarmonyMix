@@ -21,5 +21,5 @@ TEST(SongTest, FailConstructorTest){
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
-    return USER_ALL_TESTS();
+    return RUN_ALL_TESTS();
 }

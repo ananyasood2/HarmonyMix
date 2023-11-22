@@ -25,9 +25,7 @@ string Song::getGenre() {
 }
 
 void Song::displaySong() {
-    cout << "Song Name: " << getName() << endl;
-    cout << "Artist Name: " << getArtistName() << endl;
-    cout << "Song Genre: " << getGenre() << endl;
+    cout << "Song Name: " << getName() << " " << "Artist Name: " << getArtistName() << " " << "Song Genre: " << getGenre() << endl;
     //newline after song information
     cout << endl;
 }
