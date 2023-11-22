@@ -16,7 +16,7 @@ Authors:
  > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
-![Navigation diagram ](Navigation_diagram.png)
+![Navigation diagram ](Navigationdia.png)
 ### Screen Layouts
 ![screen layouts](screenlayout.PNG)
 
