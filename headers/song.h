@@ -2,8 +2,8 @@
 #define SONG_H
 
 #include "db.h"
-#include "library.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -13,11 +13,12 @@ private:
     string artistName; 
     string genre;
 public:
-    Song() = default;
+    Song();
+    Song(string name, string artist, string genreName);
     string getName();
     string getArtistName();
     string getGenre();
-    void displaySong(const vector<Song> &songs);
+    void displaySong();
 };
 
 #endif
