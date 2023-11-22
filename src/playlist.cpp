@@ -1,7 +1,11 @@
 #include "playlist.h"
 
-PlayList::Playlist {
-    playlistName = 0;
+Playlist::Playlist {
+    playlistName = "";
+}
+
+Playlist::Playlist(string playlist) {
+    playlistName = playlist;
 }
 
 //adds the songName into the playlist vector  
@@ -10,7 +14,7 @@ void Playlist::addSong(Song &song) {
 }
 
 //deletes a song from the playlist vector 
-void PlayList::deleteSong(Song &song) {
+void Playlist::deleteSong(Song &song) {
     for (auto iterate = playlist.begin(); iterate != playlist.end(); ++iterate) {
         if (iterate->getName() == song.getName()) {
             iterate = playlist.erase(iterate);

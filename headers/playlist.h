@@ -12,6 +12,7 @@ private:
     string playlistName;
 public:
     Playlist();
+    Playlist(string playlist);
     void addSong(const Song& song);
     void deleteSong(const Song& song); 
 };
