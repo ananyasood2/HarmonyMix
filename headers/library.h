@@ -6,15 +6,18 @@
 #include <vector>
 using namespace std;
 
-class Library {
+class Library : public Song {
     private:
         vector<Song> songs;
     public:
-        Library() = default;
-        Song searchBySongName(string songName);
-        Song searchByArtistName(string artistName); 
-        Song searchByGenre(string genreName);
-        bool addSong(Song *song, Db *db);
+        Library(); 
+        Library(vector<Song> s);
+        void searchBySongName(string songName);
+        void searchByArtistName(string artistName); 
+        void searchByGenre(string genreName);
+        void addToLibrary(string songName, string artistName, string genreName);
+        bool duplicateSong(Song *song);
+    
 };
 
 #endif
