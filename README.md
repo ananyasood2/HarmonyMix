@@ -29,8 +29,15 @@ Authors:
 + The Song class has a name, artist name, genre, and file path.
 
  > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on Zoom and should be conducted by Wednesday of week 8.
- 
+## SOLID UML Diagram
+![solid_uml_diagram](http://www.plantuml.com/plantuml/png/ZLHDRzim3BtxLn0v37QT53qxGz1k1OOCRH4Wwww1RAk9C5aA97bRDlI_Zv8bnHzhq9lq-4W-Fek-rOOeqpOyqJ-OE1956gWuqVhE6CNArj1r9SMM_Q5maxW0F6kgu6-oW1OFWZIq08rSiKVeGFI1rXka_PAgZe4SE2iLKQS27he3GaTEJfnfemluIIiZrSUDHrOsGUwPICSjvd0SrSuWUVN2jbBidR2HA1mGYpuDmJqLwdpFNN8wR3NDc_kqU7rXd6w8EKGrIOuKbvDc0UomkrXj7Fc2DNjWdCTRvKRIAEzib1MB9WL6clNE8vODaRh-9aEyBWkukY_dhkJJ-mRkGndMbwp6ifeILHq-dRQ-K6ehNgRsJ9Wsos32xwoveA5kZvnLn50hmWd0wV1iAQMK7CtyxCmCRmlDZ2zlv6Sl4BzFp4kp_kLCt3gYTzdM6HfS0AwFDc0Z7tgoAQU6lfF-clGsRoqCLI-aelWi0A3RmiA5bWwOh9g7BwpR4i1oSdXUfrbtgfcs2Gzk2xsGvI3qI9XufABzVzJtVfiGcWyOyUdVb-xLMs--eYz5yPtmbYOv1bBlzSxwjJDov-UT_2jYqTnvjAE_xVHJMdmeOT-khrVO9maAeRjQXs6nM0LREs3M476Q8Nu5iviPX9npSYGi764RFh91-tHiUPar_EvMWqMIMohgjk7_0000)
+
+Update 1 Add Db Class:
+The solid principles we used when creating this class was the single responsability principle and the open-close principle. We applied this by removing the need for the Playlist and Library class to deal with any of the file I/O and seperated that functionality into its own class Db. If needed the Db class is written in a way so that it can be extended to use more than just JSON files. This change helps us write better code by having a single source of bugs when dealing with files and allows up to keep the code cleaner.  
+
+Update 2 Seperate Display Function:
+The solid principles we used when updating this class was the single responsability principle and the open-close principle. We applied the single responsability principle by seperating all of the menu options into seperate functions. We applied the open-close principle by enabling us to extend the display class without having to modify a much larger display function. This change helps us write better code by keeping the display functions short and readable.
+
  > BEFORE the meeting you should do the following:
  > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
  > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
