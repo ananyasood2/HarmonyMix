@@ -21,7 +21,7 @@ Authors:
 ![screen layouts](screenlayout.PNG)
 
 ## Class Diagram
-![diagram of our classes needed](uml_class_diagram.png)
+![diagram of our classes needed](http://www.plantuml.com/plantuml/png/ZLFHQjmm47pNLoptKEoq1tas9IGjj0JASU3s0tJsnYSgIqQIMznm_zwLefDrDfYyhMPdHxDZwz4wRjpOIsP_2pLmmtje9BVsoJaZJgF3vqQhMln3k6UX0Ryi6dXbUnYfKBp72YnnLKVGcTipjaUY_TMcJOsF8CN9S3DLyEEj86YGV9B2Ebl17soSDf-F4Ndm0xeJgbXUyGc6XNO9x1ADrLfrmTZ252r8ekfmYtQe36OE_NHnSrSSFEHO6el75o7noDqvsI6b3iDCKMRgX3qbjMNdEsckm6zHUSRJeZ73iAibstE2VWcVNcGKPLOlMBx5s_QdJdr23-_RFuTAajMY9JMBt3JdBrCTXQBY5ZNBP7rP2Il-Mr8R7jfnaABX3hs9OA22EwezvQIrf0o_XWol_nfbcFx4HOnP8tsPD5UK-M4cre4OmyrCD5fP1nxuaBb5YGwtMHUMlRjdvT2yy0RXrOyBwoykolWOgy2Xm-grxJTVsuNvETZl7z9007OzLzEEy3lOtU_IjknQp8JGhwyhE2wKPL5gctIxb7SGLdX4rOwz_0y0)
 + The UserInterface class has a user and deals with the keyboard actions.
 + The User class has a Library and can hold multiple playlists.
 + The Library class holds many Songs and manages adding and removing them from itself.
