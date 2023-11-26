@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Playlist : public Song {
+class Playlist {
 private:
     vector<Song> playlist;
     string playlistName;
@@ -15,6 +15,7 @@ public:
     Playlist(string playlist);
     void addSong(const Song& song);
     void deleteSong( Song& song); 
+    void deletePlaylist();
     void displayPlaylist();
     Song at(unsigned int index);
 };

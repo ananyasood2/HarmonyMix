@@ -24,6 +24,17 @@ void Playlist::deleteSong(Song &song) {
     
 }
 
+void Playlist::displayPlaylist() {
+    for (Song song : playlist) {
+        song.displaySong();
+    }
+}
+
+void Playlist::deletePlaylist() {
+    playlist.clear();
+    playlistName = "";
+}
+
 Song Playlist::at(unsigned int index) {
     return playlist.at(index);
 }

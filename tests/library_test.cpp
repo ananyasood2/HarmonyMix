@@ -42,12 +42,13 @@ TEST(LibraryTest, testSearchByArtistName1) {
 
 //expected to pass
 TEST(LibraryTest, testSearchByArtistName2) {
-    addSong("Baby", "Justin Beiber", "Pop");
-    addSong("No", "Meghan Trainor", "Pop");
-    addSong("Gernade", "Bruno Mars", "Pop");
-    
-    Library *testLibrary4 = new Library();
-    EXPECT_EQ(Library->searchByArtistName("Bruno Mars"),"Gernade Bruno Mars Pop");
+    Library testLibrary;
+
+    testlibrary.addToLibrary("Baby", "Justin Beiber", "Pop");
+    testlibrary.addToLibrary("No", "Meghan Trainor", "Pop");
+    testlibrary.addToLibrary("Gernade", "Bruno Mars", "Pop");
+
+    EXPECT_EQ(testlibrary.searchByArtistName("Bruno Mars"), correctSon);
 }
 
 //SEARCHBYGENRE FUNCTION TESTS

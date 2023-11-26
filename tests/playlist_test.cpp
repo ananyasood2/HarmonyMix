@@ -17,13 +17,14 @@ TEST(PlaylistTests, failConstructorTest){
 //passing add song function
 TEST(PlaylistTests, passAddSong) {
     Playlist playlist;
+
     Song newSong1("No", "Meghan Trainor", "Pop");
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
 
-    addSong(newSong1);
-    addSong(newSong2);
-    addSong(newSong3);
+    playlist.addSong(newSong1);
+    playlist.addSong(newSong2);
+    playlist.addSong(newSong3);
 
     EXPECT_EQ(newSong1, playlist.at(0));
     EXPECT_EQ(newSong2, playlist.at(1));
@@ -38,9 +39,9 @@ TEST(PlaylistTests, failAddSong) {
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
     
-    newSong1.addSong(newSong1);
-    addSong(newSong2);
-    addSong(newSong3);
+    playlist.addSong(newSong1);
+    playlist.addSong(newSong2);
+    playlist.addSong(newSong3);
 
     EXPECT_EQ(newSong1, playlist.at(2));
     EXPECT_EQ(newSong2, playlist.at(1));
@@ -56,11 +57,11 @@ TEST(PlaylistTests, passDeleteSong) {
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
 
-    deleteSong(newSong1);
-    deleteSong(newSong2);
+    playlist.deleteSong(newSong1);
+    playlist.deleteSong(newSong2);
 
-    EXPECT_NE(newSong1, playlist.at(0));
-    EXPECT_NE(newSong2, playlist.at(1));
+    EXPECT_EQ(newSong1, playlist.at(0));
+    EXPECT_EQ(newSong2, playlist.at(1));
 }
 
 //failing delete song function
@@ -71,8 +72,8 @@ TEST(PlaylistTests, failDeleteSong) {
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
 
-    deleteSong(newSong1);
-    deleteSong(newSong2);
+    playlist.deleteSong(newSong1);
+    playlist.deleteSong(newSong2);
     
     EXPECT_EQ(newSong1, playlist.at(2));
     EXPECT_EQ(newSong2, playlist.at(1));
