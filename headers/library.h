@@ -14,8 +14,10 @@ class Library : public Song {
         Library(vector<Song> s);
         void searchBySongName(string songName);
         void searchByArtistName(string artistName); 
-        Song searchByGenre(string genreName);
-        bool addSong(Song *song);
+        void searchByGenre(string genreName);
+        void addToLibrary(string songName, string artistName, string genreName);
+        bool duplicateSong(Song *song);
+    
 };
 
 #endif

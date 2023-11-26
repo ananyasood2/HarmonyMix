@@ -6,3 +6,10 @@ CMakeCache.txt
 *.a
 runAllTests
 build/
+mainMenuUi.cpp
+playlistUI.cpp
+.vscode
+src/loginUI.cpp
+src/libraryUI.cpp
+src/library.cpp
+headers/library.h

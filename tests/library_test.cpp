@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
-#include "library.cpp"
+#include "song.h"
+#include "library.h"
 
 //CONSTRUCTOR TESTS
 //expected to pass
@@ -47,6 +48,50 @@ TEST(LibraryTest, testSearchByArtistName2) {
     
     Library *testLibrary4 = new Library();
     EXPECT_EQ(Library->searchByArtistName("Bruno Mars"),"Gernade Bruno Mars Pop");
+}
+
+//SEARCHBYGENRE FUNCTION TESTS
+//passing searchByGenre Tests 
+TEST(LibraryTest, passSearchByGenre){
+    addSong("Baby", "Justin Bieber", "Pop");
+    addSong("No", "Meghan Trainor", "Pop");
+    addSong("Gernade", "Bruno Mars", "Hip Hop");
+
+    Library *testLibrary5 = new Library(); 
+    EXPECT_EQ(Library->searchByGenre("Hip Hop"), "Gernade Bruno Mars Hip Hop");
+}
+
+//failing searchByGenre Tests 
+TEST(LibraryTest, failSearchByGenre){
+    addSong("Baby", "Justin Bieber", "Pop");
+    addSong("No", "Meghan Trainor", "Pop");
+    addSong("Gernade", "Bruno Mars", "Hip Hop");
+
+    Library *testLibrary5 = new Library(); 
+    EXPECT_EQ(Library->searchByGenre("Hip Hop"), "Baby Justin Bieber Pop");
+}
+
+//ADD SONG TO LIBRARY FUNCTION
+//passing add song to libarayfunction
+TEST(PlaylistTests, passAddToLibrarySong) {
+    Song newSong1("No", "Meghan Trainor", "Pop");
+    Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
+    Song newSong3("Limbo", "Keshi", "R&B");
+
+    EXPECT_EQ(addToLibrary(newSong1), songs.at(0));
+    EXPECT_EQ(addToLibrary(newSong2), songs.at(1));
+    EXPECT_EQ(addToLibrary(newSong3), songs.at(2));
+}
+
+//failing add song to libaray function
+TEST(PlaylistTests, failAddToLibrarySong) {
+    Song newSong1("No", "Meghan Trainor", "Pop");
+    Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
+    Song newSong3("Limbo", "Keshi", "R&B");
+    
+    EXPECT_EQ(addToLibrary(newSong1), songs.at(2));
+    EXPECT_EQ(addToLibrary(newSong2), songs.at(1));
+    EXPECT_EQ(addToLibrary(newSong3), songs.at(0));
 }
 
 int main(int argc, char **argv) {
