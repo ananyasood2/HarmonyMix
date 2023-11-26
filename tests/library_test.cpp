@@ -1,22 +1,18 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
-#include "library.cpp"
-
-//CONSTRUCTOR TESTS
-//expected to pass
-TEST(LibraryTest, ConstructorTest) {
-    EXPECT_EQ(Library(testVector), testVector);
-}
+#include "library.h"
 
 //SEARCH FUNCTION TESTS
 //expected to pass
 TEST(LibraryTest, testSearchBySongName1) {
-    addSong("Baby", "Justin Beiber", "Pop");
-    addSong("No", "Meghan Trainor", "Pop");
-    addSong("Gernade", "Bruno Mars", "Pop");
+    Library testLibrary1;
+
+    testLibrary1.addSong("Baby", "Justin Beiber", "Pop");
+    testLibrary1.addSong("No", "Meghan Trainor", "Pop");
+    testLibrary1.addSong("Gernade", "Bruno Mars", "Pop");
+
     
-    Library *testLibrary1 = new Library();
-    EXPECT_EQ(Library->searchBySongName("Baby"),"Baby Justin Beiber Pop");
+    EXPECT_EQ(testLibrary1.addSong()->searchBySongName("Baby"),"Baby Justin Beiber Pop");
 }
 
 //expected to pass
