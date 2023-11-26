@@ -5,60 +5,81 @@
 //CONSTRUCTOR TESTS
 //passing Constructor 
 TEST(PlaylistTests, passConstructorTest){
-    EXPECT_EQ(Playlist(playfulMix), "playfulMix");
+    EXPECT_EQ(Playlist("playfulMix"), "playfulMix");
 }
 
 //failing Constructor 
 TEST(PlaylistTests, failConstructorTest){
-    EXPECT_EQ(Playlist(playfulMix), "");
+    EXPECT_EQ(Playlist("playfulMix"), "");
 }
 
 //ADD SONG FUNCTION
 //passing add song function
 TEST(PlaylistTests, passAddSong) {
+    Playlist playlist;
     Song newSong1("No", "Meghan Trainor", "Pop");
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
 
-    EXPECT_EQ(addSong(newSong1), playlist.at(0));
-    EXPECT_EQ(addSong(newSong2), playlist.at(1));
-    EXPECT_EQ(addSong(newSong3), playlist.at(2));
+    addSong(newSong1);
+    addSong(newSong2);
+    addSong(newSong3);
+
+    EXPECT_EQ(newSong1, playlist.at(0));
+    EXPECT_EQ(newSong2, playlist.at(1));
+    EXPECT_EQ(newSong3, playlist.at(2));
 }
 
 //failing add song function
 TEST(PlaylistTests, failAddSong) {
+    Playlist playlist;
+
     Song newSong1("No", "Meghan Trainor", "Pop");
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
     
-    EXPECT_EQ(addSong(newSong1), playlist.at(2));
-    EXPECT_EQ(addSong(newSong2), playlist.at(1));
-    EXPECT_EQ(addSong(newSong3), playlist.at(0));
+    newSong1.addSong(newSong1);
+    addSong(newSong2);
+    addSong(newSong3);
+
+    EXPECT_EQ(newSong1, playlist.at(2));
+    EXPECT_EQ(newSong2, playlist.at(1));
+    EXPECT_EQ(newSong3, playlist.at(0));
 }
 
 //DELTE SONG FUNCTION
 //passing delete song function
 TEST(PlaylistTests, passDeleteSong) {
+    Playlist playlist;
+
     Song newSong1("No", "Meghan Trainor", "Pop");
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
 
-    EXPECT_NE(deleteSong(newSong1), playlist.at(0));
-    EXPECT_NE(deleteSong(newSong2), playlist.at(1));
+    deleteSong(newSong1);
+    deleteSong(newSong2);
+
+    EXPECT_NE(newSong1, playlist.at(0));
+    EXPECT_NE(newSong2, playlist.at(1));
 }
 
 //failing delete song function
 TEST(PlaylistTests, failDeleteSong) {
+    Playlist playlist;
+
     Song newSong1("No", "Meghan Trainor", "Pop");
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
+
+    deleteSong(newSong1);
+    deleteSong(newSong2);
     
-    EXPECT_EQ(deleteSong(newSong1), playlist.at(2));
-    EXPECT_EQ(deleteSong(newSong2), playlist.at(1));
+    EXPECT_EQ(newSong1, playlist.at(2));
+    EXPECT_EQ(newSong2, playlist.at(1));
 }
 
 int main(int argc, char **argv) {
-    ::testing:InitGoogleTest(&argc, argv);
+    ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
 

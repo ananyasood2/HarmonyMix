@@ -14,7 +14,9 @@ public:
     Playlist();
     Playlist(string playlist);
     void addSong(const Song& song);
-    void deleteSong(const Song& song); 
+    void deleteSong( Song& song); 
+    void displayPlaylist();
+    Song at(unsigned int index);
 };
 
 #endif

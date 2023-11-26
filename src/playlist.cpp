@@ -1,6 +1,6 @@
 #include "playlist.h"
 
-Playlist::Playlist {
+Playlist::Playlist() {
     playlistName = "";
 }
 
@@ -9,8 +9,8 @@ Playlist::Playlist(string playlist) {
 }
 
 //adds the songName into the playlist vector  
-void Playlist::addSong(Song &song) {
-   playlist.push_back(songName);
+void Playlist::addSong(const Song &song) {
+   playlist.push_back(song);
 }
 
 //deletes a song from the playlist vector 
@@ -22,4 +22,8 @@ void Playlist::deleteSong(Song &song) {
         }
     }
     
+}
+
+Song Playlist::at(unsigned int index) {
+    return playlist.at(index);
 }
