@@ -1,5 +1,6 @@
 #include "playlist.h"
 
+
 Playlist::Playlist {
     playlistName = "";
 }
@@ -22,4 +23,17 @@ void Playlist::deleteSong(Song &song) {
         }
     }
     
+}
+
+vector<Song> Playlist::reccommend(string artistName, string genre) {
+    Library libraryTest;
+    vector<Song> genreRec;
+    vector<Song> artistRec;
+
+    genreRec = libraryTest.searchByGenre(genre);
+    artistRec = libraryTest.searchByArtistName(artistName);
+
+    genreRec.insert(genreRec.end(), artistRec.begin(), artistRec.end());
+
+    return genreRec;
 }

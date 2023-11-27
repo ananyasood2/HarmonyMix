@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "song.h"
+#include "library.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
     Playlist(string playlist);
     void addSong(const Song& song);
     void deleteSong(const Song& song); 
+    vector<Song> reccommend(string artistName, string genre);
 };
 
 #endif
