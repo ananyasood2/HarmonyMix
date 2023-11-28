@@ -17,6 +17,8 @@ public:
     void deleteSong( Song& song); 
     void deletePlaylist();
     void displayPlaylist();
+    string getPlaylistName();
+    Song sharePlaylist();
     Song at(unsigned int index);
 };
 

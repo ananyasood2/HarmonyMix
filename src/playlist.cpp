@@ -38,3 +38,7 @@ void Playlist::deletePlaylist() {
 Song Playlist::at(unsigned int index) {
     return playlist.at(index);
 }
+
+string Playlist::getPlaylistName() {
+    return playlistName;
+}
