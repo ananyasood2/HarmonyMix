@@ -16,7 +16,7 @@ class Library : public Song {
         void searchByArtistName(string artistName); 
         void searchByGenre(string genreName);
         void addToLibrary(string songName, string artistName, string genreName);
-        bool duplicateSong(Song *song);
+        bool duplicateSong(Song &song);
     
 };
 

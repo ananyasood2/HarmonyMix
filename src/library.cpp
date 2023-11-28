@@ -40,7 +40,7 @@ void Library::searchByGenre(string genreName) {
     for (Song &song : songs) {
         if (song.getGenre() == genreName) {
            //prints out song information
-           song.displaySongs()
+           song.displaySong();
         }
     }
 }
@@ -50,19 +50,20 @@ void Library::addToLibrary(string songName, string artistName, string genreName)
     Song newSong(songName, artistName, genreName); 
 
     //checking to make sure that a duplicate song wasn't added
-    if (newSong.duplicateSong(newSong) == false) {
+    if (duplicateSong(newSong) == false) {
         songs.push_back(newSong); 
     }
     
 }
 
 //checking to see if there is a duplicate song in the library 
-bool Library::duplicateSong(Song *song) {
-    bool decision = false;
+bool Library::duplicateSong(Song &song) {
 
     for (Song &songDuplicate : songs) {
         if (songDuplicate.getName() == song.getName() && songDuplicate.getArtistName() == song.getArtistName()) {
             return true;
         }
     }
+
+    return false;
 }
