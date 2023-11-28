@@ -21,8 +21,7 @@ void Playlist::deleteSong(Song &song) {
             iterate = playlist.erase(iterate);
             --iterate; 
         }
-    }
-    
+    }   
 }
 
 vector<Song> Playlist::reccommend(string artistName, string genre) {
