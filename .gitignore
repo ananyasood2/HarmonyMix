@@ -8,7 +8,6 @@ runAllTests
 build/
 .vscode
 src/loginUI.cpp
-src/libraryUI.cpp
 src/library.cpp
 headers/library.h
 src/library.cpp
@@ -16,3 +15,4 @@ src/library.cpp
 src/library.cpp
 src/library.cpp
 src/loginUI.cpp
+src/library.cpp

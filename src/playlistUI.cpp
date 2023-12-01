@@ -12,45 +12,44 @@ int playlistChoice=0;
 string songName, genre, artistName;
 while(playlistChoice!=5){
 
-
-cout<<"1)Add song"<<endl;
-cout<<"2)Delete song"<<endl;
-cout<<"3)Create a playlist"<<endl;
+cout<<"1)Create a playlist"<<endl;
+cout<<"2)Add song"<<endl;
+cout<<"3)Delete song"<<endl;
 cout<<"4)Display playlist"<<endl;
 cout<<"5)Back to the main menu"<<endl;
 cin>>playlistChoice;
-
 if(playlistChoice==1){
-    
-    cout<<"enter the song name: ";
-    cin>>songName;
-    cout<<endl<<"Enter the artist name: ";
-    cin>>artistName;
-    cout<<endl<<"Enter the genre: ";
-    cin>>genre;
-     Song newSong(songName, artistName, genre);
-    playlists.addSong(newSong);
+    string playlistName;
+    cout<<"Enter your playlist name: ";
+    cin>>playlistName;
+    cout<<endl;
+    playlist=Playlist(playlistName);
 }
 if(playlistChoice==2){
-    cout<<"enter the song name: ";
+    
+    cout<<"Enter the song name: ";
     cin>>songName;
     cout<<endl<<"Enter the artist name: ";
     cin>>artistName;
     cout<<endl<<"Enter the genre: ";
     cin>>genre;
     Song newSong(songName, artistName, genre);
-    playlists.deleteSong(newSong);
+    playlist.addSong(newSong);
 }
 if(playlistChoice==3){
-    string playlistName;
-    cout<<"Enter your playlist name: ";
-    cin>>playlistName;
-    cout<<endl;
-    playlists.Playlist(playlistName);
+    cout<<"Enter the song name: ";
+    cin>>songName;
+    cout<<endl<<"Enter the artist name: ";
+    cin>>artistName;
+    cout<<endl<<"Enter the genre: ";
+    cin>>genre;
+    Song newSong(songName, artistName, genre);
+    playlist.deleteSong(newSong);
 }
+
 if(playlistChoice==4){
-    cout<<playlists.getPlaylistName()<<endl;
-    playlists.displayPlaylist();
+    cout<<playlist.getPlaylistName()<<endl;
+    playlist.displayPlaylist();
 }
 }
 if(playlistChoice==5){
