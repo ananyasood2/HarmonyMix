@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "playlist.h"
+#include <vector>
 
 //CONSTRUCTOR TESTS
 //passing Constructor 

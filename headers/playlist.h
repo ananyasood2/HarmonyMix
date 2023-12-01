@@ -17,8 +17,10 @@ public:
     void deleteSong( Song& song); 
     void deletePlaylist();
     void displayPlaylist();
+    ofstream sharePlaylist();
+
+    //unit testing purposes 
     string getPlaylistName();
-    Song sharePlaylist();
     Song at(unsigned int index);
 };
 
