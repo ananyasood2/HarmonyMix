@@ -19,7 +19,7 @@ public:
     void deletePlaylist();
     void displayPlaylist();
     string getPlaylistName();
-    Song sharePlaylist();
+    ofstream sharePlaylist();
     Song at(unsigned int index);
     vector<Song> reccommend(string artistName, string genre);
 };

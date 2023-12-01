@@ -6,7 +6,7 @@
 
 //SEARCH FUNCTION TESTS
 //expected to pass
-TEST(LibraryTest, testSearchBySongName1) {
+TEST(LibraryTest, passTestSearchBySongName) {
     Library testLibrary1;
 
     Song newSong1("Baby", "Justin Beiber", "Pop");
@@ -28,7 +28,7 @@ TEST(LibraryTest, testSearchBySongName1) {
 }
 
 //expected to fail
-TEST(LibraryTest, testSearchBySongName2) {
+TEST(LibraryTest, failTestSearchBySongName) {
     Library testLibrary2;
 
     Song newSong1("Baby", "Justin Beiber", "Pop");
@@ -50,7 +50,7 @@ TEST(LibraryTest, testSearchBySongName2) {
 }
 
 //expected to pass
-TEST(LibraryTest, testSearchByArtistName1) {
+TEST(LibraryTest, passTestSearchByArtistName) {
     Library testLibrary3;
 
     Song newSong1("Baby", "Justin Beiber", "Pop");
@@ -72,7 +72,7 @@ TEST(LibraryTest, testSearchByArtistName1) {
 }
 
 //expected to fail
-TEST(LibraryTest, testSearchByArtistName2) {
+TEST(LibraryTest, failTestSearchByArtistName) {
     Library testLibrary4;
 
     Song newSong1("Baby", "Justin Beiber", "Pop");
@@ -151,9 +151,9 @@ TEST(LibraryTest, passAddToLibrarySong) {
     testLibrary7.addToLibrary(newSong2);
     testLibrary7.addToLibrary(newSong3);
 
-    EXPECT_EQ(newSong1, testLibrary7.at(0));
-    EXPECT_EQ(newSong2, testLibrary7.at(1));
-    EXPECT_EQ(newSong3, testLibrary7.at(2));
+    EXPECT_EQ(newSong1.getName(), testLibrary7.at(0).getName());
+    EXPECT_EQ(newSong2.getName(), testLibrary7.at(1).getName());
+    EXPECT_EQ(newSong3.getName(), testLibrary7.at(2).getName());
 }
 
 //failing add song to library function
@@ -168,12 +168,7 @@ TEST(LibraryTest, failAddToLibrarySong) {
     testLibrary8.addToLibrary(newSong2);
     testLibrary8.addToLibrary(newSong3);
     
-    EXPECT_EQ(newSong1, testLibrary8.at(2));
-    EXPECT_EQ(newSong2, testLibrary8.at(1));
-    EXPECT_EQ(newSong3, testLibrary8.at(0));
-}
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    EXPECT_EQ(newSong1.getName(), testLibrary8.at(2).getName());
+    EXPECT_EQ(newSong2.getName(), testLibrary8.at(1).getName());
+    EXPECT_EQ(newSong3.getName(), testLibrary8.at(0).getName());
 }
