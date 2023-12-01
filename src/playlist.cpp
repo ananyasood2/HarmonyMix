@@ -9,20 +9,19 @@ Playlist::Playlist(string playlist) {
     playlistName = playlist;
 }
 
-//adds the songName into the playlist vector  
+//adds the songName into the playlist vector
 void Playlist::addSong(const Song &song) {
    playlist.push_back(song);
 }
 
-//deletes a song from the playlist vector 
+//deletes a song from the playlist vector
 void Playlist::deleteSong(Song &song) {
     for (auto iterate = playlist.begin(); iterate != playlist.end(); ++iterate) {
         if (iterate->getName() == song.getName()) {
             iterate = playlist.erase(iterate);
-            --iterate; 
+            --iterate;
         }
     }
-    
 }
 
 void Playlist::displayPlaylist() {
@@ -30,7 +29,6 @@ void Playlist::displayPlaylist() {
         song.displaySong();
     }
 }
-
 void Playlist::deletePlaylist() {
     playlist.clear();
     playlistName = "";
@@ -38,20 +36,16 @@ void Playlist::deletePlaylist() {
 
 ofstream Playlist::sharePlaylist() {
     string fileName = playlistName + ".txt";
-
     ofstream outputF(fileName, ios::out);
-
     if (outputF.is_open()) {
         for (Song &song : playlist) {
             outputF << song.getName() << ", " << song.getArtistName() << ", " << song.getGenre() << endl;
         }
-
         outputF.close();
         cout << "playlist file: " << fileName << " has been shared successfully" << endl;
     } else {
         cout << "Error: sharing playlist file has not been opened" << endl;
     }
-
     return outputF;
 }
 
@@ -63,3 +57,15 @@ Song Playlist::at(unsigned int index) {
     return playlist.at(index);
 }
 
+vector<Song> Playlist::reccommend(string artistName, string genre) {
+    Library libraryTest;
+    vector<Song> genreRec;
+    vector<Song> artistRec;
+
+    genreRec = libraryTest.searchByGenre(genre);
+    artistRec = libraryTest.searchByArtistName(artistName);
+
+    genreRec.insert(genreRec.end(), artistRec.begin(), artistRec.end());
+
+    return genreRec;
+}
