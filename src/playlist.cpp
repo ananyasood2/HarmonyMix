@@ -1,5 +1,4 @@
 #include "playlist.h"
-#include <fstream>
 
 Playlist::Playlist() {
     playlistName = "";
@@ -36,30 +35,10 @@ void Playlist::deletePlaylist() {
     playlistName = "";
 }
 
-ofstream Playlist::sharePlaylist() {
-    string fileName = playlistName + ".txt";
-
-    ofstream outputF(fileName, ios::out);
-
-    if (outputF.is_open()) {
-        for (Song &song : playlist) {
-            outputF << song.getName() << ", " << song.getArtistName() << ", " << song.getGenre() << endl;
-        }
-
-        outputF.close();
-        cout << "playlist file: " << fileName << " has been shared successfully" << endl;
-    } else {
-        cout << "Error: sharing playlist file has not been opened" << endl;
-    }
-
-    return outputF;
+Song Playlist::at(unsigned int index) {
+    return playlist.at(index);
 }
 
 string Playlist::getPlaylistName() {
     return playlistName;
 }
-
-Song Playlist::at(unsigned int index) {
-    return playlist.at(index);
-}
-

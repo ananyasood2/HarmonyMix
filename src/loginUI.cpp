@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void UI::displayLogin(){
+void userInterface::displayLogin(){
 int login=0;
 User x;
 string userName, password;
