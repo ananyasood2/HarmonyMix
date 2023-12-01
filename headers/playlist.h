@@ -18,11 +18,12 @@ public:
     void deleteSong( Song& song); 
     void deletePlaylist();
     void displayPlaylist();
-    string getPlaylistName();
     ofstream sharePlaylist();
-    Song at(unsigned int index);
     vector<Song> reccommend(string artistName, string genre);
+
+    //unit testing purposes 
+    string getPlaylistName();
+    Song at(unsigned int index);
 };
 
 #endif
-

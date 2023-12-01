@@ -6,8 +6,6 @@
 #include <string>
 #include <fstream>
 
-using namespace std;
-
 //CONSTRUCTOR TESTS
 //passing Constructor
 TEST(PlaylistTests, passConstructorTest){
@@ -84,6 +82,7 @@ TEST(PlaylistTests, failDeleteSong) {
     EXPECT_EQ(newSong2.getName(), playlist.at(1).getName());
 }
 
+//DELETE() FUNCTION
 TEST(PlaylistTests, failDelete) {
     Playlist playlist;
     Song newSong1("No", "Meghan Trainor", "Pop");
@@ -98,6 +97,7 @@ TEST(PlaylistTests, failDelete) {
     EXPECT_TRUE(playlist.at(0).getGenre().empty());
 }
 
+//SHAREPLAYLIST() FUNCTION
 TEST(PlaylistTests, failSharePlaylistTest) {
     Playlist playlist;
     Song newSong1("No", "Meghan Trainor", "Pop");
@@ -118,7 +118,6 @@ TEST(PlaylistTests, failSharePlaylistTest) {
     inputFile.close();
 }
 
-// RECOMMEND FUNCTION
 // RECOMMEND FUNCTION
 TEST(PlaylistTests, failRecommend) {
     Playlist playlist;
