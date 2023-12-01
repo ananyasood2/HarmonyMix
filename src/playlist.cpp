@@ -1,7 +1,6 @@
 #include "playlist.h"
 
-
-Playlist::Playlist {
+Playlist::Playlist() {
     playlistName = "";
 }
 
@@ -10,8 +9,8 @@ Playlist::Playlist(string playlist) {
 }
 
 //adds the songName into the playlist vector  
-void Playlist::addSong(Song &song) {
-   playlist.push_back(songName);
+void Playlist::addSong(const Song &song) {
+   playlist.push_back(song);
 }
 
 //deletes a song from the playlist vector 
@@ -35,4 +34,23 @@ vector<Song> Playlist::reccommend(string artistName, string genre) {
     genreRec.insert(genreRec.end(), artistRec.begin(), artistRec.end());
 
     return genreRec;
+}
+
+void Playlist::displayPlaylist() {
+    for (Song song : playlist) {
+        song.displaySong();
+    }
+}
+
+void Playlist::deletePlaylist() {
+    playlist.clear();
+    playlistName = "";
+}
+
+Song Playlist::at(unsigned int index) {
+    return playlist.at(index);
+}
+
+string Playlist::getPlaylistName() {
+    return playlistName;
 }
