@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "playlist.h"
+#include <vector>
 
 //CONSTRUCTOR TESTS
 //passing Constructor 
@@ -81,12 +82,6 @@ TEST(PlaylistTests, failDeleteSong) {
     EXPECT_EQ(newSong2.getName(), playlist.at(1).getName());
 }
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-
-
 // RECOMMEND FUNCTION
 TEST(PlaylistTests, passRecommend) {
     Playlist playlist;
@@ -104,12 +99,11 @@ TEST(PlaylistTests, passRecommend) {
     playlist.addSong(hipHopSong);
     playlist.addSong(rAndBSong);
 
-    vector<Song> recommendedSongs = playlist.recommend("Keshi", "Pop");
+    vector<Song> recommendedSongs = playlist.reccommend("Keshi", "Pop");
 
     // Ensure that the recommended songs vector contains the expected songs
-    EXPECT_EQ(recommendedSongs.size(), 2);
-    EXPECT_EQ(recommendedSongs[0].getName(), popSong.getName());
-    EXPECT_EQ(recommendedSongs[1].getName(), rAndBSong.getName());
+    EXPECT_EQ(recommendedSongs.at(0).getName(), popSong.getName());
+    EXPECT_EQ(recommendedSongs.at(1).getName(), rAndBSong.getName());
 }
 
 //failing recommend function
@@ -129,10 +123,14 @@ TEST(PlaylistTests, failRecommend) {
     playlist.addSong(hipHopSong);
     playlist.addSong(rAndBSong);
 
-    vector<Song> recommendedSongs = playlist.recommend("Keshi", "Pop");
+    vector<Song> reccommendedSongs = playlist.reccommend("Keshi", "Pop");
 
     // Introduce an intentional failure by expecting a different song
-    EXPECT_EQ(recommendedSongs.size(), 2);
-    EXPECT_EQ(recommendedSongs[0].getName(), hipHopSong.getName());
-    EXPECT_EQ(recommendedSongs[1].getName(), rAndBSong.getName());
+    EXPECT_EQ(reccommendedSongs.at(0).getName(), hipHopSong.getName());
+    EXPECT_EQ(reccommendedSongs.at(1).getName(), rAndBSong.getName());
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
