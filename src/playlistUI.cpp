@@ -10,13 +10,14 @@ using namespace std;
 void UI::displayPlaylistMenu(){
 int playlistChoice=0;
 string songName, genre, artistName;
-while(playlistChoice!=5){
+while(playlistChoice!=6){
 
 cout<<"1)Create a playlist"<<endl;
 cout<<"2)Add song"<<endl;
 cout<<"3)Delete song"<<endl;
 cout<<"4)Display playlist"<<endl;
-cout<<"5)Back to the main menu"<<endl;
+cout<<"5)Delete Playlist"<<endl;
+cout<<"6)Back to the main menu"<<endl;
 cin>>playlistChoice;
 if(playlistChoice==1){
     string playlistName;
@@ -51,8 +52,11 @@ if(playlistChoice==4){
     cout<<playlist.getPlaylistName()<<endl;
     playlist.displayPlaylist();
 }
-}
 if(playlistChoice==5){
+    playlist.deletePlaylist();
+}
+}
+if(playlistChoice==6){
     displayMainMenu();
 }
 

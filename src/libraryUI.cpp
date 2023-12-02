@@ -1,9 +1,11 @@
 #include <string>
 #include <iostream>
+#include <vector>
 #include "playlist.h"
 #include "userInterface.h"
 #include "library.h"
 #include "user.h"
+#include "song.h"
 using namespace std;
 
 
@@ -23,7 +25,8 @@ if(libraryChoice==1){
     cin>>artistName;
     cout<<endl<<"Enter the genre: ";
     cin>>genre;
-    library.addToLibrary(songName, artistName, genre);
+    Song newSong(songName, artistName,genre);
+    library.addToLibrary(newSong);
 }
 
 if(libraryChoice==2){
@@ -34,19 +37,29 @@ if(libraryChoice==2){
     cout<<"3)Search by genre "<<endl;
     cin>>libraryChoice;
     if(searchType==1){
+       
         cout<<"Enter the song name: ";
         cin>>songN;
-        library.searchBySongName(songN);
+        vector <Song> result1=library.searchBySongName(songN);
+        for (Song &songg: result1){
+            songg.displaySong();
+        }
     }
     if(searchType==2){
         cout<<"Enter the artist name: ";
         cin>>name;
-        library.searchByArtistName(name);
+          vector <Song> result2=library.searchBySongName(name);
+        for (Song &songg: result2){
+            songg.displaySong();
+        }
     }
     if(searchType==3){
         cout<<"Enter the genre: ";
         cin>>genre;
-        library.searchByGenre(genre);
+          vector <Song> result3=library.searchBySongName(genre);
+        for (Song &songg: result3){
+            songg.displaySong();
+        }
     }
 }
 }

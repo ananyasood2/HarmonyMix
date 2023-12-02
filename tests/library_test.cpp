@@ -2,100 +2,173 @@
 #include "gmock/gmock.h"
 #include "song.h"
 #include "library.h"
-
-//CONSTRUCTOR TESTS
-//expected to pass
-TEST(LibraryTest, ConstructorTest) {
-    EXPECT_EQ(Library(testVector), testVector);
-}
+#include <vector>
 
 //SEARCH FUNCTION TESTS
 //expected to pass
-TEST(LibraryTest, testSearchBySongName1) {
-    addSong("Baby", "Justin Beiber", "Pop");
-    addSong("No", "Meghan Trainor", "Pop");
-    addSong("Gernade", "Bruno Mars", "Pop");
-    
-    Library *testLibrary1 = new Library();
-    EXPECT_EQ(Library->searchBySongName("Baby"),"Baby Justin Beiber Pop");
+TEST(LibraryTest, passTestSearchBySongName) {
+    Library testLibrary1;
+
+    Song newSong1("Baby", "Justin Beiber", "Pop");
+    Song newSong2("No", "Meghan Trainor", "Pop");
+    Song newSong3("Gernade", "Bruno Mars", "Hip Hop");
+
+    testLibrary1.addToLibrary(newSong1);
+    testLibrary1.addToLibrary(newSong2);
+    testLibrary1.addToLibrary(newSong3);
+
+    vector<Song> expectedSongs;
+    expectedSongs.push_back(Song("Baby", "Justin Beiber", "Pop"));
+
+    // Search for songs with the name "Baby"
+    vector<Song> resultSongs = testLibrary1.searchBySongName("Baby");
+
+    // Compare the result with the expected value
+    EXPECT_EQ(resultSongs.at(0).getName(), expectedSongs.at(0).getName());
+}
+
+//expected to fail
+TEST(LibraryTest, failTestSearchBySongName) {
+    Library testLibrary2;
+
+    Song newSong1("Baby", "Justin Beiber", "Pop");
+    Song newSong2("No", "Meghan Trainor", "Pop");
+    Song newSong3("Gernade", "Bruno Mars", "Hip Hop");
+
+    testLibrary2.addToLibrary(newSong1);
+    testLibrary2.addToLibrary(newSong2);
+    testLibrary2.addToLibrary(newSong3);
+
+    vector<Song> expectedSongs;
+    expectedSongs.push_back(Song("Gernade", "Bruno Mars", "Hip Hop"));
+
+    // Search for songs with the name "Gernade"
+    vector<Song> resultSongs = testLibrary2.searchBySongName("Gernade");
+
+    // Compare the result with the expected value
+    EXPECT_EQ(resultSongs.at(0).getName(), expectedSongs.at(1).getName());
 }
 
 //expected to pass
-TEST(LibraryTest, testSearchBySongName2) {
-    addSong("Baby", "Justin Beiber", "Pop");
-    addSong("No", "Meghan Trainor", "Pop");
-    addSong("Gernade", "Bruno Mars", "Pop");
-    
-    Library *testLibrary2 = new Library();
-    EXPECT_EQ(Library->searchBySongName("Gernade"),"Gernade Bruno Mars Pop");
+TEST(LibraryTest, passTestSearchByArtistName) {
+    Library testLibrary3;
+
+    Song newSong1("Baby", "Justin Beiber", "Pop");
+    Song newSong2("No", "Meghan Trainor", "Pop");
+    Song newSong3("Gernade", "Bruno Mars", "Hip Hop");
+
+    testLibrary3.addToLibrary(newSong1);
+    testLibrary3.addToLibrary(newSong2);
+    testLibrary3.addToLibrary(newSong3);
+
+    vector<Song> expectedSongs;
+    expectedSongs.push_back(Song("Baby", "Justin Beiber", "Pop"));
+
+    // Search for songs with the artist "Justin Beiber"
+    vector<Song> resultSongs = testLibrary3.searchByArtistName("Justin Beiber");
+
+    // Compare the result with the expected value
+    EXPECT_EQ(expectedSongs.at(0).getArtistName(), expectedSongs.at(0).getArtistName());
 }
 
-//expected to pass
-TEST(LibraryTest, testSearchByArtistName1) {
-    addSong("Baby", "Justin Beiber", "Pop");
-    addSong("No", "Meghan Trainor", "Pop");
-    addSong("Gernade", "Bruno Mars", "Pop");
-    
-    Library *testLibrary3 = new Library();
-    EXPECT_EQ(Library->searchByArtistName("Justin Beiber"),"Baby Justin Beiber Pop");
-}
+//expected to fail
+TEST(LibraryTest, failTestSearchByArtistName) {
+    Library testLibrary4;
 
-//expected to pass
-TEST(LibraryTest, testSearchByArtistName2) {
-    Library testLibrary;
+    Song newSong1("Baby", "Justin Beiber", "Pop");
+    Song newSong2("No", "Meghan Trainor", "Pop");
+    Song newSong3("Gernade", "Bruno Mars", "Hip Hop");
 
-    testlibrary.addToLibrary("Baby", "Justin Beiber", "Pop");
-    testlibrary.addToLibrary("No", "Meghan Trainor", "Pop");
-    testlibrary.addToLibrary("Gernade", "Bruno Mars", "Pop");
+    testLibrary4.addToLibrary(newSong1);
+    testLibrary4.addToLibrary(newSong2);
+    testLibrary4.addToLibrary(newSong3);
 
-    EXPECT_EQ(testlibrary.searchByArtistName("Bruno Mars"), correctSon);
+    vector<Song> expectedSongs;
+    expectedSongs.push_back(Song("Gernade", "Bruno Mars", "Hip Hop"));
+
+    // Search for songs with the artist "Bruno Mars"
+    vector<Song> resultSongs = testLibrary4.searchByArtistName("Bruno Mars");
+
+    // Compare the result with the expected value
+    EXPECT_EQ(expectedSongs.at(0).getArtistName(), expectedSongs.at(1).getArtistName());
 }
 
 //SEARCHBYGENRE FUNCTION TESTS
 //passing searchByGenre Tests 
 TEST(LibraryTest, passSearchByGenre){
-    addSong("Baby", "Justin Bieber", "Pop");
-    addSong("No", "Meghan Trainor", "Pop");
-    addSong("Gernade", "Bruno Mars", "Hip Hop");
+    Library testLibrary5;
 
-    Library *testLibrary5 = new Library(); 
-    EXPECT_EQ(Library->searchByGenre("Hip Hop"), "Gernade Bruno Mars Hip Hop");
+    Song newSong1("Baby", "Justin Beiber", "Pop");
+    Song newSong2("No", "Meghan Trainor", "Pop");
+    Song newSong3("Gernade", "Bruno Mars", "Hip Hop");
+
+    testLibrary5.addToLibrary(newSong1);
+    testLibrary5.addToLibrary(newSong2);
+    testLibrary5.addToLibrary(newSong3);
+
+    vector<Song> expectedSongs;
+    expectedSongs.push_back(Song("Gernade", "Bruno Mars", "Hip Hop"));
+
+    // Search for songs with the genre "Hip Hop"
+    vector<Song> resultSongs = testLibrary5.searchByGenre("Hip Hop");
+
+    // Compare the result with the expected value
+    EXPECT_EQ(expectedSongs.at(0).getGenre(), expectedSongs.at(0).getGenre());
 }
 
 //failing searchByGenre Tests 
 TEST(LibraryTest, failSearchByGenre){
-    addSong("Baby", "Justin Bieber", "Pop");
-    addSong("No", "Meghan Trainor", "Pop");
-    addSong("Gernade", "Bruno Mars", "Hip Hop");
+    Library testLibrary6;
 
-    Library *testLibrary5 = new Library(); 
-    EXPECT_EQ(Library->searchByGenre("Hip Hop"), "Baby Justin Bieber Pop");
+    Song newSong1("Baby", "Justin Beiber", "Pop");
+    Song newSong2("No", "Meghan Trainor", "Pop");
+    Song newSong3("Gernade", "Bruno Mars", "Hip Hop");
+
+    testLibrary6.addToLibrary(newSong1);
+    testLibrary6.addToLibrary(newSong2);
+    testLibrary6.addToLibrary(newSong3);
+
+    vector<Song> expectedSongs;
+    expectedSongs.push_back(Song("Baby", "Justin Bieber", "Pop"));
+
+    // Search for songs with the genre "Hip Hip"
+    vector<Song> resultSongs = testLibrary6.searchByGenre("Hip Hop");
+
+    // Compare the result with the expected value
+    EXPECT_EQ(expectedSongs.at(1).getGenre(), expectedSongs.at(0).getGenre());
 }
 
 //ADD SONG TO LIBRARY FUNCTION
-//passing add song to libarayfunction
-TEST(PlaylistTests, passAddToLibrarySong) {
+//passing add song to library function
+TEST(LibraryTest, passAddToLibrarySong) {
+    Library testLibrary7;
+
     Song newSong1("No", "Meghan Trainor", "Pop");
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
 
-    EXPECT_EQ(addToLibrary(newSong1), songs.at(0));
-    EXPECT_EQ(addToLibrary(newSong2), songs.at(1));
-    EXPECT_EQ(addToLibrary(newSong3), songs.at(2));
+    testLibrary7.addToLibrary(newSong1);
+    testLibrary7.addToLibrary(newSong2);
+    testLibrary7.addToLibrary(newSong3);
+
+    EXPECT_EQ(newSong1.getName(), testLibrary7.at(0).getName());
+    EXPECT_EQ(newSong2.getName(), testLibrary7.at(1).getName());
+    EXPECT_EQ(newSong3.getName(), testLibrary7.at(2).getName());
 }
 
-//failing add song to libaray function
-TEST(PlaylistTests, failAddToLibrarySong) {
+//failing add song to library function
+TEST(LibraryTest, failAddToLibrarySong) {
+    Library testLibrary8;
+
     Song newSong1("No", "Meghan Trainor", "Pop");
     Song newSong2("Tomboy", "Destingy Rogers", "Hip Hop");
     Song newSong3("Limbo", "Keshi", "R&B");
+
+    testLibrary8.addToLibrary(newSong1);
+    testLibrary8.addToLibrary(newSong2);
+    testLibrary8.addToLibrary(newSong3);
     
-    EXPECT_EQ(addToLibrary(newSong1), songs.at(2));
-    EXPECT_EQ(addToLibrary(newSong2), songs.at(1));
-    EXPECT_EQ(addToLibrary(newSong3), songs.at(0));
-}
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    EXPECT_EQ(newSong1.getName(), testLibrary8.at(2).getName());
+    EXPECT_EQ(newSong2.getName(), testLibrary8.at(1).getName());
+    EXPECT_EQ(newSong3.getName(), testLibrary8.at(0).getName());
 }
