@@ -9,8 +9,8 @@ void UI::displayLogin(){
 int loginChoice=0;
 
 string userName, password;
-cout<<"2)Login"<<endl;
 cout<<"1)Create an Account"<<endl;
+cout<<"2)Login"<<endl;
 cin>>loginChoice;
 if(loginChoice==1){
 string userr, pass;
@@ -19,6 +19,7 @@ cin>>userr;
 cout<<endl<<"Enter your desired password: ";
 cin>>pass;
 user= User(userr, pass);
+displayMainMenu();
 }
 if(loginChoice==2){
     cout<<"Enter your username: ";
