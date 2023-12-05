@@ -13,3 +13,4 @@ src/loginUI.cpp
 src/libraryUI.cpp
 src/library.cpp
 headers/library.h
+lib
