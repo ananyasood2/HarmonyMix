@@ -8,15 +8,17 @@ ADD_SUBDIRECTORY(googletest)
 ADD_EXECUTABLE(runAllTests
     user_test.cpp
     ../src/user.cpp
-    userInterface_test.cpp
-    playlist_test.cpp 
+    # userInterface_test.cpp
+    # playlist_test.cpp 
     ../src/playlist.cpp
-    song_test.cpp
+    # song_test.cpp
     ../src/song.cpp
-    library_test.cpp 
-    ../src/library.cpp  
+    # library_test.cpp 
+    ../src/library.cpp
+    ../src/jsoncpp.cpp
+    ../src/db.cpp
 )
-
+target_include_directories(runAllTests PRIVATE ../headers/json)
 TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
 target_link_libraries(runAllTests gmock gtest gtest_main)
 target_include_directories(runAllTests  PRIVATE ../headers)

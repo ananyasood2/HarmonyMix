@@ -12,11 +12,11 @@ TEST(LibraryTest, ConstructorTest) {
 //SEARCH FUNCTION TESTS
 //expected to pass
 TEST(LibraryTest, testSearchBySongName1) {
+    Library *testLibrary1 = new Library();
     addSong("Baby", "Justin Beiber", "Pop");
     addSong("No", "Meghan Trainor", "Pop");
     addSong("Gernade", "Bruno Mars", "Pop");
     
-    Library *testLibrary1 = new Library();
     EXPECT_EQ(Library->searchBySongName("Baby"),"Baby Justin Beiber Pop");
 }
 
