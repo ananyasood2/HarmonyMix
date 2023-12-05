@@ -15,10 +15,10 @@ private:
     
 public:
     UI() = default;
-    void displayLogin();
-    void displayMainMenu();
-    void displayLibraryMenu();
-    void displayPlaylistMenu();
+    void displayLogin(ostream &stream, User *user);
+    void displayMainMenu(ostream &stream, User *user);
+    void displayLibraryMenu(ostream &stream, User *user);
+    void displayPlaylistMenu(ostream &stream, User *user);
 
 };
 #endif

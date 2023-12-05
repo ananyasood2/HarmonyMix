@@ -1,9 +1,9 @@
 #ifndef SONG_H
 #define SONG_H
-
-#include "db.h"
 #include <string>
 #include <iostream>
+
+#include "json/json.h"
 
 using namespace std;
 
@@ -15,10 +15,15 @@ private:
 public:
     Song();
     Song(string name, string artist, string genreName);
-    string getName();
-    string getArtistName();
-    string getGenre();
-    void displaySong();
+    string getName() const;
+    string getArtistName() const;
+    string getGenre() const;
+    void displaySong(ostream &stream) const;
+    Json::Value toJson() const; 
+
+    friend bool operator!=(const Song& lhs, const Song& rhs){
+        return !(lhs.songName.compare(rhs.songName) == 0);
+    }
 };
 
 #endif

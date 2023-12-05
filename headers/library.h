@@ -1,12 +1,11 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 #include "song.h"
-#include "db.h"
 #include <string>
 #include <vector>
 using namespace std;
 
-class Library : public Song {
+class Library {
     private:
         vector<Song> songs;
     public:
@@ -17,7 +16,7 @@ class Library : public Song {
         void searchByGenre(string genreName);
         void addToLibrary(string songName, string artistName, string genreName);
         bool duplicateSong(Song *song);
-    
+        std::vector<Song> getSongs() const;
 };
 
 #endif

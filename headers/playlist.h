@@ -3,10 +3,11 @@
 #include <string>
 #include <vector>
 #include "song.h"
+#include "json/json.h"
 
 using namespace std;
 
-class Playlist : public Song {
+class Playlist {
 private:
     vector<Song> playlist;
     string playlistName;
@@ -14,7 +15,11 @@ public:
     Playlist();
     Playlist(string playlist);
     void addSong(const Song& song);
-    void deleteSong(const Song& song); 
+    void deleteSong(Song& song);     
+    string getPlaylistName() const;
+    Song at (uint32_t index);
+    Json::Value toJson() const;
+    const vector<Song> getSongs() const;
 };
 
 #endif
