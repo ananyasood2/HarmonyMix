@@ -74,4 +74,3 @@ bool Library::duplicateSong(Song &song) {
 Song Library::at(unsigned int i) {
     return songs.at(i);
 }
-

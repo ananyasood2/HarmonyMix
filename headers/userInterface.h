@@ -11,7 +11,7 @@ private:
     User user;
     Library library;
     std::vector<Playlist> playlists;
-   
+    Playlist playlist;
     
 public:
     UI() = default;

@@ -6,23 +6,34 @@ using namespace std;
 
 
 void UI::displayLogin(){
-int login=0;
-User x;
+
+int loginChoice=0;
 string userName, password;
-cout<<"1)Login"<<endl;
-cout<<"2)Create an Account"<<endl;
-cin>>login;
-if(login==1){
+cout<<"1)Create an Account"<<endl;
+cout<<"2)Login"<<endl;
+cin>>loginChoice;
+if(loginChoice==1){
+string userr, pass;
+cout<<"Enter your desired user name: ";
+cin>>userr;
+cout<<endl<<"Enter your desired password: ";
+cin>>pass;
+user= User(userr, pass);
+displayMainMenu();
+}
+if(loginChoice==2){
     cout<<"Enter your username: ";
     cin>>userName;
     cout<<endl<<"Enter your password: ";
     cin>>password;
-    if(x.login(userName, password)){
+    if(user.login(userName, password)==true){
         displayMainMenu();
     }
     else{
-        cout<<"Wrong username or password."<<endl;
+        cout<<"Wrong username or password, exiting."<<endl;
+        exit(0);
     }
 }
-
 }
+
+

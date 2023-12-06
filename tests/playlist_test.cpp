@@ -95,6 +95,7 @@ TEST(PlaylistTests, failDelete) {
     EXPECT_TRUE(playlist.at(0).getName().empty());
     EXPECT_TRUE(playlist.at(0).getArtistName().empty());
     EXPECT_TRUE(playlist.at(0).getGenre().empty());
+
 }
 
 //SHAREPLAYLIST() FUNCTION
