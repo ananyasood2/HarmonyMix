@@ -6,8 +6,8 @@ using namespace std;
 
 
 void UI::displayLogin(){
-int loginChoice=0;
 
+int loginChoice=0;
 string userName, password;
 cout<<"1)Create an Account"<<endl;
 cout<<"2)Login"<<endl;
