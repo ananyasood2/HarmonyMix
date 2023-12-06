@@ -7,7 +7,7 @@
 using namespace std;
 
 
-void UI::displayPlaylistMenu(){
+void UI::displayPlaylistMenu(ostream &stream, User* user){
 int playlistChoice=0;
 string songName, genre, artistName;
 while(playlistChoice!=6){
@@ -50,14 +50,14 @@ if(playlistChoice==3){
 
 if(playlistChoice==4){
     cout<<playlist.getPlaylistName()<<endl;
-    playlist.displayPlaylist();
+    playlist.displayPlaylist(stream);
 }
 if(playlistChoice==5){
     playlist.deletePlaylist();
 }
 }
 if(playlistChoice==6){
-    displayMainMenu();
+    displayMainMenu(stream, user);
 }
 
 }

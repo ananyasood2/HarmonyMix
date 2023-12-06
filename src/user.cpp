@@ -64,9 +64,9 @@ bool User::create_account(const std::string &username, const std::string &passwo
     return this->db.create_account(username, password);
 }
 
-void User::addSongToLibrary(const Song &song)
+void User::addSongToLibrary(Song &song)
 {
-    this->library.addToLibrary(song.getName(), song.getArtistName(), song.getGenre());
+    this->library.addToLibrary(song);
     db.add_song_to_library(this->username, song);
 }
 

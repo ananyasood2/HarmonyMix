@@ -65,7 +65,7 @@ void Library::addToLibrary(Song &song) {
 //checking to see if there is a duplicate song in the library 
 bool Library::duplicateSong(Song &song) {
     for (Song &songDuplicate : songs) {
-        if (songDuplicate.getName() == song->getName() && songDuplicate.getArtistName() == song->getArtistName()) {
+        if (songDuplicate.getName() == song.getName() && songDuplicate.getArtistName() == song.getArtistName()) {
             return true;
         }
     }

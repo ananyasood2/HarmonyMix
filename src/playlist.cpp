@@ -30,9 +30,6 @@ string Playlist::getPlaylistName() const
     return this->playlistName;
 }
 
-Song Playlist::at(uint32_t index){
-    return this->playlist.at(index);
-}
 
 Json::Value Playlist::toJson() const
 {
@@ -68,9 +65,9 @@ const vector<Song> Playlist::getSongs() const
     // this->globalLibrary.searchByArtistName();
 
 // }
-void Playlist::displayPlaylist() {
+void Playlist::displayPlaylist(ostream &stream) {
     for (Song song : playlist) {
-        song.displaySong();
+        song.displaySong(stream);
     }
 }
 void Playlist::deletePlaylist() {

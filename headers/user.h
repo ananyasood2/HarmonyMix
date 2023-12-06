@@ -25,7 +25,7 @@ public:
     Playlist get_playlist(const std::string& playlistName) const;
     void createPlaylist(const std::string& playlistName);
     bool create_account(const std::string &username, const std::string &password);
-    void addSongToLibrary(const Song& song);
+    void addSongToLibrary(Song& song);
     void deleteSongFromLibrary(const std::string& song);
     void addSongToPlaylist(const Playlist &playlist, const Song& song);
     void deleteSongFromPlaylist(const std::string &playlist, const std::string& song);

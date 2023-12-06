@@ -9,7 +9,7 @@
 using namespace std;
 
 
-void UI::displayLibraryMenu(){
+void UI::displayLibraryMenu(ostream &stream, User* user){
 int libraryChoice=0;
 string songName, genre, artistName;
 while(libraryChoice!=3){
@@ -42,7 +42,7 @@ if(libraryChoice==2){
         cin>>songN;
         vector <Song> result1=library.searchBySongName(songN);
         for (Song &songg: result1){
-            songg.displaySong();
+            songg.displaySong(stream);
         }
     }
     if(searchType==2){
@@ -50,7 +50,7 @@ if(libraryChoice==2){
         cin>>name;
           vector <Song> result2=library.searchBySongName(name);
         for (Song &songg: result2){
-            songg.displaySong();
+            songg.displaySong(stream);
         }
     }
     if(searchType==3){
@@ -58,12 +58,12 @@ if(libraryChoice==2){
         cin>>genre;
           vector <Song> result3=library.searchBySongName(genre);
         for (Song &songg: result3){
-            songg.displaySong();
+            songg.displaySong(stream);
         }
     }
 }
 }
 if(libraryChoice==3){
-    displayMainMenu();
+    displayMainMenu(stream, user);
 }
 }
