@@ -11,12 +11,17 @@ class Library {
     public:
         Library(); 
         Library(vector<Song> s);
-        void searchBySongName(string songName);
-        void searchByArtistName(string artistName); 
-        void searchByGenre(string genreName);
-        void addToLibrary(string songName, string artistName, string genreName);
-        bool duplicateSong(Song *song);
+
         std::vector<Song> getSongs() const;
+        vector<Song> searchBySongName(string songName);
+        vector<Song> searchByArtistName(string artistName); 
+        vector<Song> searchByGenre(string genreName);
+        void addToLibrary(Song &song);
+        bool duplicateSong(Song &song);
+
+        //for the unit tests writing a .at function
+        Song at(unsigned int i);
+
 };
 
 #endif

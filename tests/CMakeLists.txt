@@ -6,6 +6,7 @@ set(CMAKE_CXX_FLAGS "-std=c++17 -lstdc++fs")
 ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(runAllTests
+    main.cpp
     user_test.cpp
     ../src/user.cpp
     # userInterface_test.cpp
