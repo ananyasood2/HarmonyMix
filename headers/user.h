@@ -20,14 +20,14 @@ public:
 
     std::string get_username() const;
     std::string get_password() const;
-    std::vector<Song> get_library() const;    
+    Library get_library() const;    
     std::vector<Playlist> get_playlists() const;    
-    Playlist get_playlist(const std::string& playlistName) const;
+    Playlist* get_playlist(const std::string& playlistName);
     void createPlaylist(const std::string& playlistName);
     bool create_account(const std::string &username, const std::string &password);
     void addSongToLibrary(Song& song);
     void deleteSongFromLibrary(const std::string& song);
-    void addSongToPlaylist(const Playlist &playlist, const Song& song);
+    void addSongToPlaylist(const std::string &playlist, const Song& song);
     void deleteSongFromPlaylist(const std::string &playlist, const std::string& song);
 
 };

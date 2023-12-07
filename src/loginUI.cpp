@@ -4,49 +4,49 @@
 
 using namespace std;
 
-void UI::displayLogin(ostream &stream, User *user)
+void UI::displayLogin(ostream &stream, istream &istream, User *user)
 {
     int login = 0;
     string userName, password;
-    cout << "1)Login" << endl;
-    cout << "2)Create an Account" << endl;
-    cin >> login;
+    stream << "1)Login" << endl;
+    stream << "2)Create an Account" << endl;
+    istream >> login;
     if (login == 1)
     {
-        cout << "Enter your username: ";
-        cin >> userName;
-        cout << endl
+        stream << "Enter your username: ";
+        istream >> userName;
+        stream << endl
              << "Enter your password: ";
-        cin >> password;
+        istream >> password;
         if (user->login(userName, password))
         {
-            displayMainMenu(stream, user);
+            displayMainMenu(stream, istream, user);
         }
         else
         {
-            cout << "Wrong username or password." << endl;
+            stream << "Wrong username or password." << endl;
         }
     }
     else if (login == 2)
     {
-        cout << "Enter your username: ";
-        cin >> userName;
-        cout << endl
+        stream << "Enter your username: ";
+        istream >> userName;
+        stream << endl
              << "Enter your password: ";
-        cin >> password;
+        istream >> password;
         if (user->create_account(userName, password))
         {
-            cout << "Account created" << endl;
-            displayMainMenu(stream, user);
+            stream << "Account created" << endl;
+            displayMainMenu(stream, istream, user);
         }
         else
         {
-            cout << "Account already exists" << endl;
+            stream << "Account already exists" << endl;
         }
     }
     else
     {
-        cout << "Invalid input, try again: ";
-        cin >> login;
+        stream << "Invalid input, try again: ";
+        istream >> login;
     }
 }

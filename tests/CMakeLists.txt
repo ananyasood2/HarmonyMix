@@ -9,12 +9,12 @@ ADD_EXECUTABLE(runAllTests
     main.cpp
     user_test.cpp
     ../src/user.cpp
-    # userInterface_test.cpp
-    # playlist_test.cpp 
+    userInterface_test.cpp
+    playlist_test.cpp 
     ../src/playlist.cpp
-    # song_test.cpp
+    song_test.cpp
     ../src/song.cpp
-    # library_test.cpp 
+    library_test.cpp 
     ../src/library.cpp
     ../src/jsoncpp.cpp
     ../src/db.cpp

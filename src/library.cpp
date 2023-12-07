@@ -81,3 +81,11 @@ std::vector<Song> Library::getSongs() const
 Song Library::at(unsigned int i) {
     return songs.at(i);
 }
+
+void Library::removeFromLibrary(const std::string &song) {
+    for (unsigned int i = 0; i < songs.size(); i++) {
+        if (songs.at(i).getName() == song) {
+            songs.erase(songs.begin() + i);
+        }
+    }
+}

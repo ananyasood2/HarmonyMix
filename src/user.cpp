@@ -21,7 +21,9 @@ bool User::login(const std::string &username, const std::string &password){
 }
 
 bool User::logout() {
-    return false;
+    this->library = Library();
+    this->playlists = std::vector<Playlist>();
+    return true;
 }
 
 std::string User::get_username() const
@@ -34,9 +36,9 @@ std::string User::get_password() const
     return this->hashedPassword;
 }
 
-std::vector<Song> User::get_library() const
+Library User::get_library() const
 {
-    return this->library.getSongs();
+    return this->library;
 }
 
 std::vector<Playlist> User::get_playlists() const
@@ -44,16 +46,23 @@ std::vector<Playlist> User::get_playlists() const
     return this->playlists;
 }
 
-Playlist User::get_playlist(const std::string &playlistName) const
+Playlist* User::get_playlist(const std::string &playlistName)
 {
-    auto it = std::find_if(this->playlists.begin(), this->playlists.end(), [&playlistName](const Playlist &playlist){
-        return playlist.getPlaylistName() == playlistName;
-    });
-    return *it;
+    for(auto it = this->playlists.begin(); it != this->playlists.end(); it++){
+        if(it->getPlaylistName() == playlistName){
+            return &(*it);
+        }
+    }
+    return nullptr;
 }
 
 void User::createPlaylist(const std::string &playlistName)
 {
+    for(auto it = playlists.begin(); it != playlists.end(); it++){
+        if(it->getPlaylistName() == playlistName){
+            return;
+        }
+    }
     Playlist playlist = Playlist(playlistName);
     this->playlists.push_back(playlist);
     this->db.add_playlist(this->username, playlist);
@@ -72,15 +81,28 @@ void User::addSongToLibrary(Song &song)
 
 void User::deleteSongFromLibrary(const std::string &song)
 {
+    this->library.removeFromLibrary(song);
     db.remove_song_from_library(this->username, song);   
 }
 
-void User::addSongToPlaylist(const Playlist &playlist, const Song &song)
+void User::addSongToPlaylist(const std::string &playlist, const Song &song)
 {
+    auto playlist_ptr = this->get_playlist(playlist);
+    if(playlist_ptr == nullptr){
+        return;
+    }
+    for(auto _song : playlist_ptr->getSongs()){
+        if(_song.getName() == song.getName()){
+            return;
+        }
+    }
+    playlist_ptr->addSong(song);
     db.add_song_to_playlist(this->username, playlist, song);
 }
 
 void User::deleteSongFromPlaylist(const std::string &playlist, const std::string &song)
 {
+    Song s(song, "", "");
+    this->get_playlist(playlist)->deleteSong(s);
     db.remove_song_from_playlist(this->username, playlist, song);
 }

@@ -60,7 +60,7 @@ bool Db::create_account(const std::string &username, const std::string &password
         std::hash<std::string> str_hash;        
         this->db[username]["password"] = str_hash(password); 
         this->db[username]["library"] = Json::Value(Json::objectValue);
-        this->db[username]["playlists"] = Json::Value(Json::objectValue);
+        this->db[username]["playlists"] = Json::Value(Json::objectValue);        
         std::fstream usersdb (fs::current_path().append("usersdb.json"),  std::ios::in | std::ios::out | std::ios::trunc);
         usersdb << this->db;
         usersdb.flush();
@@ -79,25 +79,26 @@ std::vector<Playlist> Db::get_playlists(const std::string &user) const
     auto playlists_json = this->db[user]["playlists"];
     std::vector<Playlist> playlists;
     for(auto playlist : playlists_json){
-        Playlist _playlist;
+        Playlist _playlist(playlist["name"].asString());
         Song song;
         for(auto song : playlist["songs"]){
             _playlist.addSong(Song(song["name"].asString(), song["artist"].asString(), song["genre"].asString()));
         }
         playlists.push_back(_playlist);
     }
+    std::cout << playlists.size() << std::endl;
     return playlists;
 }
 
 void Db::add_song_to_playlist(const std::string &user, const Playlist &playlist, const Song &song)
 {
-    this->db[user]["playlists"][playlist.getPlaylistName()] = song.toJson();
+    this->db[user]["playlists"][playlist.getPlaylistName()]["songs"][song.getName()] = song.toJson();
     this->save();
 }
 
 void Db::remove_song_from_playlist(const std::string &user, const std::string &playlist, const std::string &song)
 {
-    this->db[user]["playlists"][playlist].removeMember(song);
+    this->db[user]["playlists"][playlist]["songs"][song].removeMember(song);
     this->save();
 }
 

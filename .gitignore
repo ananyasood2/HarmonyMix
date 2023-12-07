@@ -11,12 +11,6 @@ src/loginUI.cpp
 src/library.cpp
 headers/library.h
 lib
-src/library.cpp
-src/library.cpp
-src/library.cpp
-src/library.cpp
-src/loginUI.cpp
-src/library.cpp
 tests/googletest
 tests/.txt
 tests/googletest

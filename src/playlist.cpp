@@ -36,7 +36,7 @@ Json::Value Playlist::toJson() const
     Json::Value playlist;
     // playlist[this->playlistName] = Json::Value(Json::objectValue);
     playlist[this->playlistName]["name"] = this->playlistName;
-    playlist[this->playlistName]["songs"] = Json::Value(Json::arrayValue);
+    playlist[this->playlistName]["songs"] = Json::Value(Json::objectValue);
     for (auto song : this->playlist)
     {
         playlist[this->playlistName]["songs"].append(song.toJson());

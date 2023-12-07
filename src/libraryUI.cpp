@@ -8,62 +8,73 @@
 #include "song.h"
 using namespace std;
 
+void UI::displayLibraryMenu(ostream &stream, istream &istream, User *user)
+{
+    int libraryChoice = 0;
+    string songName, genre, artistName;
+    while (libraryChoice != 4)
+    {
+        cout << "1)Add song" << endl;
+        cout << "2)Search" << endl;
+        cout << "3)List songs" << endl;
+        cout << "4)Back to main menu" << endl;
+        istream >> libraryChoice;
 
-void UI::displayLibraryMenu(ostream &stream, User* user){
-int libraryChoice=0;
-string songName, genre, artistName;
-while(libraryChoice!=3){
-cout<<"1)Add song"<<endl;
-cout<<"2)Search"<<endl;
-cout<<"3)Back to main menu";
-cin>>libraryChoice;
+        if (libraryChoice == 1)
+        {
+            istream.ignore(256, '\n');
+            cout << "Enter the song name: ";
+            getline(istream,songName);
+            cout << endl
+                 << "Enter the artist name: ";
+            getline(istream,artistName);
+            cout << endl
+                 << "Enter the genre: ";
+            getline(istream,genre);
+            Song newSong(songName, artistName, genre);
+            user->addSongToLibrary(newSong);
+        }
 
-if(libraryChoice==1){
-    cout<<"enter the song name: ";
-    cin>>songName;
-    cout<<endl<<"Enter the artist name: ";
-    cin>>artistName;
-    cout<<endl<<"Enter the genre: ";
-    cin>>genre;
-    Song newSong(songName, artistName,genre);
-    library.addToLibrary(newSong);
-}
+        if (libraryChoice == 2)
+        {
+            int searchType = 0;
+            string name, genre1, songN;
+            cout << "1)Search by song name" << endl;
+            cout << "2)Search by artist name " << endl;
+            cout << "3)Search by genre " << endl;
+            istream >> searchType;
+            istream.ignore(256, '\n');
+            if (searchType == 1)
+            {
 
-if(libraryChoice==2){
-    int searchType=0;
-    string name, genre1, songN;
-    cout<<"1)Search by song name"<<endl;
-    cout<<"2)Search by artist name "<<endl;
-    cout<<"3)Search by genre "<<endl;
-    cin>>libraryChoice;
-    if(searchType==1){
-       
-        cout<<"Enter the song name: ";
-        cin>>songN;
-        vector <Song> result1=library.searchBySongName(songN);
-        for (Song &songg: result1){
-            songg.displaySong(stream);
+                cout << "Enter the song name: ";
+                getline(istream, songN);
+                vector<Song> result1 = user->get_library().searchBySongName(songN);
+            }
+            if (searchType == 2)
+            {
+                cout << "Enter the artist name: ";
+                getline(istream, name);
+                vector<Song> result2 = user->get_library().searchByArtistName(name);
+            }
+            if (searchType == 3)
+            {
+                cout << "Enter the genre: ";
+                getline(istream, genre);
+                vector<Song> result3 = user->get_library().searchByGenre(genre);
+            }
+            displayLibraryMenu(stream, istream, user);
+        }
+        if (libraryChoice == 3)
+        {
+            for (Song song : user->get_library().getSongs())
+            {
+                song.displaySong(stream);
+            }
+        }
+        if (libraryChoice == 4)
+        {
+            displayMainMenu(stream, istream, user);
         }
     }
-    if(searchType==2){
-        cout<<"Enter the artist name: ";
-        cin>>name;
-          vector <Song> result2=library.searchBySongName(name);
-        for (Song &songg: result2){
-            songg.displaySong(stream);
-        }
-    }
-    if(searchType==3){
-        cout<<"Enter the genre: ";
-        cin>>genre;
-          vector <Song> result3=library.searchBySongName(genre);
-        for (Song &songg: result3){
-            songg.displaySong(stream);
-        }
-    }
-}
-}
-if(libraryChoice==3){
-    displayMainMenu(stream, user);
-}
 }

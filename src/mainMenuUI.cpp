@@ -124,17 +124,14 @@ using namespace std;
 //     else if (menuChoice == 4)
 //     {
 //         displayMainMenu(stream, user);
-//     }
-    
-    
-    
+//     }    
 // }
-void UI::displayMainMenu(ostream &stream, User *user)
+void UI::displayMainMenu(ostream &stream, istream &istream, User *user)
 {
     int menuChoice = 0;
     stream << "1)Library" << endl;
     stream << "2)Playlist" << endl;
-    stream << "3)logout" << endl;
+    stream << "3)Logout" << endl;
     cin >> menuChoice;
     while (menuChoice < 1 || menuChoice > 3)
     {
@@ -144,11 +141,11 @@ void UI::displayMainMenu(ostream &stream, User *user)
 
     if (menuChoice == 1)
     {
-        this->displayLibraryMenu(stream, user);        
+        this->displayLibraryMenu(stream, istream, user);        
     }
     if (menuChoice == 2)
     {
-        this->displayPlaylistMenu(stream, user);
+        this->displayPlaylistMenu(stream, istream, user);
     }
     if (menuChoice == 3)
     {

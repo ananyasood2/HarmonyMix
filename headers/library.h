@@ -18,7 +18,7 @@ class Library {
         vector<Song> searchByGenre(string genreName);
         void addToLibrary(Song &song);
         bool duplicateSong(Song &song);
-
+        void removeFromLibrary(const std::string &song);
         //for the unit tests writing a .at function
         Song at(unsigned int i);
 

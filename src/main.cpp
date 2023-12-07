@@ -20,5 +20,5 @@ int main(){
     // user.addSongToLibrary(Song("Call Me Maybe", "Carley Rae Jepsen", "Pop"));
     // user.deleteSongFromLibrary(Song("Call Me Maybe", "Carley Rae Jepsen", "Pop"));
 
-    ui.displayLogin(cout, &user);
+    ui.displayLogin(cout, cin, &user);
 }

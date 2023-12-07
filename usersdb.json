@@ -17,6 +17,21 @@
 			}
 		},
 		"password" : 15118982290295364091,
-		"playlists" : {}
+		"playlists" : 
+		{
+			"test playlist" : 
+			{
+				"name" : "test playlist",
+				"songs" : 
+				{
+					"test name" : 
+					{
+						"artist" : "test artist",
+						"genre" : "test genre",
+						"name" : "test name"
+					}
+				}
+			}
+		}
 	}
 }
