@@ -17,6 +17,7 @@ vector<Song> Library::searchBySongName(string songName) {
     for (Song &song : songs) {
         if (song.getName() == songName) {
             //prints out song information
+            song.displaySong(cout);
             correctSong.push_back(song);
         }
     }
@@ -30,6 +31,7 @@ vector<Song> Library::searchByArtistName(string artistName) {
     for (Song &song : songs) {
         if (song.getArtistName() == artistName) {
             //prints out song information
+            song.displaySong(cout);
             correctSong.push_back(song);
         }
     }
@@ -44,6 +46,7 @@ vector<Song> Library::searchByGenre(string genreName) {
     for (Song &song : songs) {
         if (song.getGenre() == genreName) {
            //prints out song information
+           song.displaySong(cout);
            correctSong.push_back(song);
         }
     }
@@ -66,11 +69,23 @@ bool Library::duplicateSong(Song &song) {
             return true;
         }
     }
-
     return false;
+}
+
+std::vector<Song> Library::getSongs() const
+{    
+    return this->songs;
 }
 
 //.at function for unit tests
 Song Library::at(unsigned int i) {
     return songs.at(i);
+}
+
+void Library::removeFromLibrary(const std::string &song) {
+    for (unsigned int i = 0; i < songs.size(); i++) {
+        if (songs.at(i).getName() == song) {
+            songs.erase(songs.begin() + i);
+        }
+    }
 }

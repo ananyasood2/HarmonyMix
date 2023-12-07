@@ -6,58 +6,83 @@
 #include "user.h"
 using namespace std;
 
-
-void UI::displayPlaylistMenu(){
-int playlistChoice=0;
-string songName, genre, artistName;
-while(playlistChoice!=6){
-
-cout<<"1)Create a playlist"<<endl;
-cout<<"2)Add song"<<endl;
-cout<<"3)Delete song"<<endl;
-cout<<"4)Display playlist"<<endl;
-cout<<"5)Delete Playlist"<<endl;
-cout<<"6)Back to the main menu"<<endl;
-cin>>playlistChoice;
-if(playlistChoice==1){
-    string playlistName;
-    cout<<"Enter your playlist name: ";
-    cin>>playlistName;
-    cout<<endl;
-    playlist=Playlist(playlistName);
-}
-if(playlistChoice==2){
+void UI::displayPlaylistMenu(ostream &stream, istream &istream, User *user)
+{
+    int menuChoice = 0;
+    stream << "1)Add Song" << endl;
+    stream << "2)Delete Song" << endl;
+    stream << "3)Create Playlist" << endl;
+    stream << "4)List Playlists" << endl;
+    stream << "5)Get Playlists's Songs" << endl;
+    stream << "6)Back" << endl;
+    istream >> menuChoice;
+    while (menuChoice < 1 || menuChoice > 7)
+    {
+        stream << "Invalid input, try again: ";
+        istream >> menuChoice;
+    }
     
-    cout<<"Enter the song name: ";
-    cin>>songName;
-    cout<<endl<<"Enter the artist name: ";
-    cin>>artistName;
-    cout<<endl<<"Enter the genre: ";
-    cin>>genre;
-    Song newSong(songName, artistName, genre);
-    playlist.addSong(newSong);
-}
-if(playlistChoice==3){
-    cout<<"Enter the song name: ";
-    cin>>songName;
-    cout<<endl<<"Enter the artist name: ";
-    cin>>artistName;
-    cout<<endl<<"Enter the genre: ";
-    cin>>genre;
-    Song newSong(songName, artistName, genre);
-    playlist.deleteSong(newSong);
-}
-
-if(playlistChoice==4){
-    cout<<playlist.getPlaylistName()<<endl;
-    playlist.displayPlaylist();
-}
-if(playlistChoice==5){
-    playlist.deletePlaylist();
-}
-}
-if(playlistChoice==6){
-    displayMainMenu();
-}
-
+    if (menuChoice == 1)
+    {
+        istream.ignore(256, '\n');
+        string playlistname, title, artist, genre;
+        stream << "Enter the playlist name: ";
+        getline(istream, playlistname);
+        stream << "Enter the title of the song: ";
+        getline(istream, title);
+        stream << endl
+               << "Enter the artist of the song: ";
+        getline(istream, artist);
+        stream << endl
+               << "Enter the genre of the song: ";
+        getline(istream, genre);
+        user->addSongToPlaylist(playlistname, Song(title, artist, genre));
+        displayPlaylistMenu(stream, istream, user);
+    }
+    else if (menuChoice == 2)
+    {
+        string playlistname, title, artist, genre;
+        istream.ignore(256, '\n');
+        stream << "Enter the playlist name: ";
+        getline(istream, playlistname);
+        stream << "Enter the title of the song: ";
+        getline(istream, title);
+        user->deleteSongFromPlaylist(playlistname, title);
+        displayPlaylistMenu(stream, istream, user);
+    }
+    else if (menuChoice == 3)
+    {
+        string playlistname;
+        istream.ignore(256, '\n');
+        stream << "Enter the playlist name: ";
+        getline(istream, playlistname);
+        user->createPlaylist(playlistname);
+        displayPlaylistMenu(stream, istream, user);
+    }
+    else if (menuChoice == 4)
+    {
+        auto playlists = user->get_playlists();
+        for (auto playlist : playlists)
+        {
+            stream << playlist.getPlaylistName() << endl;
+        }
+        displayPlaylistMenu(stream, istream, user);
+        
+    }
+    else if (menuChoice == 5)
+    {
+        string playlistname;
+        istream.ignore(256, '\n');
+        stream << "Enter the playlist name: ";
+        getline(istream, playlistname);
+        auto playlist = user->get_playlist(playlistname);
+        for (auto song : playlist->getSongs())
+        {
+            song.displaySong(cout);
+        }
+    }
+    else if (menuChoice == 4)
+    {
+        displayMainMenu(stream, istream, user);
+    }
 }

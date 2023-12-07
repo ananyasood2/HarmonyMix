@@ -1,0 +1,37 @@
+{
+	"jordan" : 
+	{
+		"library" : 
+		{
+			"call me maybe" : 
+			{
+				"artist" : "carly rae jepsen",
+				"genre" : "pop",
+				"name" : "call me maybe"
+			},
+			"song name" : 
+			{
+				"artist" : "artist name",
+				"genre" : "genre name",
+				"name" : "song name"
+			}
+		},
+		"password" : 15118982290295364091,
+		"playlists" : 
+		{
+			"test playlist" : 
+			{
+				"name" : "test playlist",
+				"songs" : 
+				{
+					"test name" : 
+					{
+						"artist" : "test artist",
+						"genre" : "test genre",
+						"name" : "test name"
+					}
+				}
+			}
+		}
+	}
+}

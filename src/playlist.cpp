@@ -1,4 +1,5 @@
 #include "playlist.h"
+#include "song.h"
 #include <fstream>
 
 Playlist::Playlist() {
@@ -9,7 +10,7 @@ Playlist::Playlist(string playlist) {
     playlistName = playlist;
 }
 
-//adds the songName into the playlist vector
+//adds the songName into the playlist vector  
 void Playlist::addSong(const Song &song) {
    playlist.push_back(song);
 }
@@ -24,9 +25,49 @@ void Playlist::deleteSong(Song &song) {
     }
 }
 
-void Playlist::displayPlaylist() {
+string Playlist::getPlaylistName() const
+{
+    return this->playlistName;
+}
+
+
+Json::Value Playlist::toJson() const
+{
+    Json::Value playlist;
+    // playlist[this->playlistName] = Json::Value(Json::objectValue);
+    playlist[this->playlistName]["name"] = this->playlistName;
+    playlist[this->playlistName]["songs"] = Json::Value(Json::objectValue);
+    for (auto song : this->playlist)
+    {
+        playlist[this->playlistName]["songs"].append(song.toJson());
+    }
+    return playlist;
+}
+
+const vector<Song> Playlist::getSongs() const
+{
+    return this->playlist;
+}
+
+// vector<Song> reccommend(User user, artist name, genre){
+
+//     genreRec = this->userLibrary.searchByGenre();
+//     artistRec = this->userLibrary.searchByArtistName();
+
+//     return genreRec + artistRec;
+
+
+    // UI
+    // for each song in rec        
+    //     std::cout << song.getName() << std::endl;
+
+    // this->globalLibrary.searchByGenre();
+    // this->globalLibrary.searchByArtistName();
+
+// }
+void Playlist::displayPlaylist(ostream &stream) {
     for (Song song : playlist) {
-        song.displaySong();
+        song.displaySong(stream);
     }
 }
 void Playlist::deletePlaylist() {

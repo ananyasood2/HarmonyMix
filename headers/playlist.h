@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "song.h"
+#include "json/json.h"
 #include "library.h"
 
 using namespace std;
@@ -15,9 +16,12 @@ public:
     Playlist();
     Playlist(string playlist);
     void addSong(const Song& song);
+    string getPlaylistName() const;
+    Json::Value toJson() const;
+    const vector<Song> getSongs() const;
     void deleteSong( Song& song); 
     void deletePlaylist();
-    void displayPlaylist();
+    void displayPlaylist(ostream &stream);
     ofstream sharePlaylist();
     vector<Song> reccommend(string artistName, string genre);
 
