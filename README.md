@@ -10,7 +10,7 @@ Authors:
  * The language that we are planning on using is c++ and the IDE we are using is vscode.
  * The main inputs for our project will be the song name, playlist name, genre, username and password, and search (in the playlist) and in terms for our output, the user would be able to have a playlist that they can modify/edit to change their personal collection of songs. As well as display a list of songs in the users library and which songs are in which playlist.
  * Some features we are planning to implement are creating a playlist, adding music to the playlist, searching for songs, recommendations based on genre.
-
+ * Leverage the jsoncpp library to create a file based Database to store application data locally. [jsoncpp](https://github.com/open-source-parsers/jsoncpp.git)
  > ## Phase II
 ## User Interface Specification
  > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
