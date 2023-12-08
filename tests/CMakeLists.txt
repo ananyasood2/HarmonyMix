@@ -21,5 +21,5 @@ ADD_EXECUTABLE(runAllTests
 )
 target_include_directories(runAllTests PRIVATE ../headers/json)
 TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)
-target_link_libraries(runAllTests gmock gtest gtest_main)
+target_link_libraries(runAllTests gmock gtest gtest_main stdc++fs)
 target_include_directories(runAllTests  PRIVATE ../headers)
