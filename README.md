@@ -18,7 +18,7 @@ Authors:
 ### Navigation Diagram
 ![Navigation diagram ](Navigationdia.png)
 ### Screen Layouts
-![screen layouts](screenlayout.PNG)
+![screen layouts](newscreen.PNG)
 
 ## Class Diagram
 ![diagram of our classes needed](http://www.plantuml.com/plantuml/png/fLPTRzii5Bxth-3DHMI_JQLUUrlLRjEcJcqLgTjk8s98WcP313XhLtM_VM1y304lovOhu-SSdlCDN2cDfMwREbFV6DzYYHjKrLYfQwqbMxQQtbI2Fx0V55radG1zKLIYv-mSjMR1SKDBf8mkNnjeWzM6ahbH-oua2GGrMqeidqfqwnO6sjRugMPAgnBjQAM5V3tlaSli3DLYpNZkJHWlbExvfZEq1HFxWg94Io5gjr-qElV0cke5q1aON7C2e4i5uAIJaB8SyRMI56iAI0vxxbF73SbEC3BiMU2g4YtN9mIA2NaGVFrPz9dDbVahaS52SuJML5CBVf2Y2LKziGakTjEp9z4bdWPaXwtFRu-d0X2uNlecj5nT4rhL-_qcn58RqWXSKowfBsv7a1Um2DjuDa8mW_tmks8rdMEz0QHm_N8_qbpNm9P8FXhEVP0mPPFI-MH0YfiIJOLR5P1DBJwPgEq--otBhxXkgS75bagiXVplJLvlr5ufPaY6Y6yWI2ZCvP1JFvLMtNOvD4qHh2EjmdLCt8jJA_JTe2YMrUPj5sMNbhY6gMgGmxGu1KhqNMQxceqJatPRimgxfWpTz8CbQIDsT7nSqe6szRJxLLuacSDclhbYQqu9ObmZLhZvDCb_roKVXkivE1OZ5X14ZNqsxEtgaaufHEvdEJzgK9DZ18844qb3ZxTbc1Wm6WIcBWUhFX0m1-CmIFf9G5Ft3VfaW-KUWLWvbQwELIMQXdAI_tQm-pzVEcMJVZ1WAAklAYVqqLSsk2rlkAPoXIiwN9jbX__zlHYs1w3PsRwHlF2PkxMtQ7AIp10R8CK0ioJeV-jTKe0xpFWTvUtfJ7sOfv75VN4IcwcK6yBtIrkUi7aHMRuoYC8xwflIw9aVy_q92ykse8-sPF4z7b_Nfz_xqOFbW45b7cqBdRnZx8POEJsn25aeirveCMmTspb3yHqEDJ6YXqF7fJjTdP6L5CtHPYB1dyxaHJzXOxJmf3iGVBpxs1TF7DxnH6DFi7-jGUpFgJmlMJS_v-UNPWhy6iwk3fWqc3zD38uc5nD_IC4YaWyzeZ7ZAkkP3Ylj7wdM0OjaLvIJjgb_0G00)
@@ -46,7 +46,17 @@ The solid principles we used when updating this class was the single responsabil
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+![screen layouts](correctscreen.PNG)
+![screen layouts](correctscreen1.PNG)
+![screen layouts](correctscreen2.PNG)
+![screen layouts](correctscreen3.PNG)
+![screen layouts](correctscreen4.PNG)
+![screen layouts](correctscreen5.PNG)
+![screen layouts](correctscreen6.PNG)
+![screen layouts](correctscreen7.PNG)
+![screen layouts](correctscreen8.PNG)
+
+All the inputs from the user are entered through the terminal and all the outputted information in regards to the playlist and the playlist's songs are also outputted inside the terminal as well.
  ## Installation/Usage
  ### Installation
  ```
