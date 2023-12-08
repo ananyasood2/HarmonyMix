@@ -46,10 +46,17 @@ The solid principles we used when updating this class was the single responsabil
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
-![screenshots](userscreenshot.PNG)
-![screenshots](userscreen2.PNG)
-![screenshots](userscreen3.PNG)
-![screenshots](userscreen4.PNG)
+![screen layouts](correctscreen.PNG)
+![screen layouts](correctscreen1.PNG)
+![screen layouts](correctscreen2.PNG)
+![screen layouts](correctscreen3.PNG)
+![screen layouts](correctscreen4.PNG)
+![screen layouts](correctscreen5.PNG)
+![screen layouts](correctscreen6.PNG)
+![screen layouts](correctscreen7.PNG)
+![screen layouts](correctscreen8.PNG)
+
+All the inputs from the user are entered through the terminal and all the outputted information in regards to the playlist and the playlist's songs are also outputted inside the terminal as well.
  ## Installation/Usage
  ### Installation
  ```
