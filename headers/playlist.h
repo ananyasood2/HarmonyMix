@@ -23,7 +23,7 @@ public:
     void deletePlaylist();
     void displayPlaylist(ostream &stream);
     ofstream sharePlaylist();
-    vector<Song> reccommend(string artistName, string genre);
+    vector<Song> reccommend(Library library, string artistName, string genre);
 
     //unit testing purposes 
     string getPlaylistName();

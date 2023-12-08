@@ -136,7 +136,7 @@ TEST(PlaylistTests, failRecommend) {
     playlist.addSong(hipHopSong);
     playlist.addSong(rAndBSong);
 
-    vector<Song> recommendedSongs = playlist.reccommend("Keshi", "Pop");
+    vector<Song> recommendedSongs = playlist.reccommend(library, "Keshi", "Pop");
 
     // Ensure that the recommended songs vector contains the expected songs
     EXPECT_EQ(recommendedSongs.at(0).getName(), popSong.getName());
