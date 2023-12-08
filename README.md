@@ -58,6 +58,6 @@ The solid principles we used when updating this class was the single responsabil
  ./harmonymix
  ```
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+We used google unit test to check for behavior of our functions and Valgrind to check for memory leaks or memory issues.
  
 ![valgrind.png](valgrind.png)
