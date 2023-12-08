@@ -48,7 +48,15 @@ The solid principles we used when updating this class was the single responsabil
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ ### Installation
+ ```
+ git clone https://github.com/cs100/final-project-jayva001-mansa015-rinuk001-asood010.git
+ cd final-project-jayva001-mansa015-rinuk001-asood010.git
+ git submodule update --init --recursive
+ cmake .
+ make
+ ./harmonymix
+ ```
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
