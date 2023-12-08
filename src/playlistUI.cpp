@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "playlist.h"
 #include "song.h"
 #include "userInterface.h"
@@ -14,7 +15,9 @@ void UI::displayPlaylistMenu(ostream &stream, istream &istream, User *user)
     stream << "3)Create Playlist" << endl;
     stream << "4)List Playlists" << endl;
     stream << "5)Get Playlists's Songs" << endl;
-    stream << "6)Back" << endl;
+    stream << "6)Get Recommendations" << endl;
+    stream << "7)Share" << endl;
+    stream << "8)Back" << endl;
     istream >> menuChoice;
     while (menuChoice < 1 || menuChoice > 7)
     {
@@ -80,8 +83,30 @@ void UI::displayPlaylistMenu(ostream &stream, istream &istream, User *user)
         {
             song.displaySong(cout);
         }
+        displayPlaylistMenu(stream, istream, user);
     }
-    else if (menuChoice == 4)
+    else if(menuChoice == 6){
+        string artistName, genre;
+        Playlist playlist;
+        istream.ignore(256, '\n');
+        stream << "Enter the artist's name: ";
+        getline(istream, artistName);
+        stream << "Enter the genre's name: ";
+        getline(istream, genre);
+        vector<Song> reccs = playlist.reccommend(user->get_library(), artistName, genre);
+        displayPlaylistMenu(stream, istream, user);
+    }
+    else if (menuChoice == 7)
+    {
+        string playlistname, username;
+        istream.ignore(256, '\n');
+        stream << "Enter the playlist name: ";
+        getline(istream, playlistname);
+        Playlist *playlist = user->get_playlist(playlistname);
+        ofstream ofs = playlist->sharePlaylist();        
+        displayPlaylistMenu(stream, istream, user);
+    }
+    else if (menuChoice == 8)
     {
         displayMainMenu(stream, istream, user);
     }

@@ -98,13 +98,12 @@ Song Playlist::at(unsigned int index) {
     return playlist.at(index);
 }
 
-vector<Song> Playlist::reccommend(string artistName, string genre) {
-    Library libraryTest;
+vector<Song> Playlist::reccommend(Library library, string artistName, string genre) {
     vector<Song> genreRec;
     vector<Song> artistRec;
 
-    genreRec = libraryTest.searchByGenre(genre);
-    artistRec = libraryTest.searchByArtistName(artistName);
+    genreRec = library.searchByGenre(genre);
+    artistRec = library.searchByArtistName(artistName);
 
     genreRec.insert(genreRec.end(), artistRec.begin(), artistRec.end());
 
