@@ -71,3 +71,4 @@ All the inputs from the user are entered through the terminal and all the output
 We used google unit test to check for behavior of our functions and Valgrind to check for memory leaks or memory issues.
  
 ![valgrind.png](valgrind.png)
+![https://raw.githubusercontent.com/cs100/final-project-jayva001-mansa015-rinuk001-asood010/master/Screenshot%20from%202023-12-08%2013-00-16.png?token=GHSAT0AAAAAACIO5TG7DRJNPZESGVCE6T6AZLTSOMQ](https://raw.githubusercontent.com/cs100/final-project-jayva001-mansa015-rinuk001-asood010/master/Screenshot%20from%202023-12-08%2013-00-16.png?token=GHSAT0AAAAAACIO5TG7DRJNPZESGVCE6T6AZLTSOMQ)
