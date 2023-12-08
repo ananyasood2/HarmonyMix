@@ -46,7 +46,10 @@ The solid principles we used when updating this class was the single responsabil
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+![screenshots](userscreenshot.PNG)
+![screenshots](userscreen2.PNG)
+![screenshots](userscreen3.PNG)
+![screenshots](userscreen4.PNG)
  ## Installation/Usage
  ### Installation
  ```
